@@ -14,7 +14,12 @@ trait BorderTrait
 
     protected $borderRight = null;
 
-    public function getBorder()
+    /**
+     * it returns border
+     *
+     * @return string|null it returns border
+     */
+    public function getBorder(): ?string
     {
         return $this->border;
     }
@@ -24,7 +29,12 @@ trait BorderTrait
         $this->border = $border;
     }
 
-    public function getBorderTop()
+    /**
+     * it returns borderTop
+     *
+     * @return string|null it returns borderTop
+     */
+    public function getBorderTop(): ?string
     {
         return $this->borderTop;
     }
@@ -34,7 +44,12 @@ trait BorderTrait
         $this->borderTop = $borderTop;
     }
 
-    public function getBorderBottom()
+    /**
+     * it returns borderBottom
+     *
+     * @return string|null it returns borderBottom
+     */
+    public function getBorderBottom(): ?string
     {
         return $this->borderBottom;
     }
@@ -44,7 +59,12 @@ trait BorderTrait
         $this->borderBottom = $borderBottom;
     }
 
-    public function getBorderLeft()
+    /**
+     * it returns borderLeft
+     *
+     * @return string|null it returns borderLeft
+     */
+    public function getBorderLeft(): ?string
     {
         return $this->borderLeft;
     }
@@ -54,7 +74,12 @@ trait BorderTrait
         $this->borderLeft = $borderLeft;
     }
 
-    public function getBorderRight()
+    /**
+     * it returns borderRight
+     *
+     * @return string|null it returns borderRight
+     */
+    public function getBorderRight(): ?string
     {
         return $this->borderRight;
     }

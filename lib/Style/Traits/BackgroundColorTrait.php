@@ -6,7 +6,12 @@ trait BackgroundColorTrait
 {
     protected $backgroundColor = null;
 
-    public function getBackgroundColor()
+    /**
+     * it returns backgroundColor
+     *
+     * @return string|null it returns backgroundColor
+     */
+    public function getBackgroundColor(): ?string
     {
         return $this->backgroundColor;
     }

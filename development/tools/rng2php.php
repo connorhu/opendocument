@@ -5,7 +5,7 @@ require __DIR__.'/../../vendor/autoload.php';
 use \Symfony\Component\Filesystem\Filesystem;
 
 $fs = new Filesystem();
-$file = __DIR__.'/../docs/OpenDocument-v1.3-schema.rng';
+$file = __DIR__.'/../OpenDocument-v1.3-schema.rng';
 $dom = new DOMDocument();
 $dom->load($file);
 $xpath = new DOMXPath($dom);
@@ -33,7 +33,8 @@ class PHPCodeGenerator
 
     public static function indent($code, $amount = 1): string
     {
-        return preg_replace('/^/gm', str_repeat(self::indent, $amount), $code);
+        $result = preg_replace('/^/m', str_repeat(self::INDENT, $amount), $code);
+        return $result === null ? '' : $result;
     }
 
     public function generateGetter(string $propertyName, string $returnType, bool $optional = true): string
@@ -44,15 +45,32 @@ class PHPCodeGenerator
  * it returns '. $propertyName .'
  *
  * @return '.$returnType. ($optional ? '|null' : '') .' it returns '. $propertyName .'
- */');
-        $buffer .= INDENT.'public function '.$getterName.'()';
+ */'. PHP_EOL);
+        $buffer .= self::INDENT.'public function '.$getterName.'()';
         $buffer .= ': '.($optional ? '?': '').$returnType;
 
         $buffer .= PHP_EOL;
 
-        $buffer .= INDENT .'{'. PHP_EOL;
-        $buffer .= str_repeat(INDENT, 2) .'return $this->'.$attributeName.';'. PHP_EOL;
-        $buffer .= INDENT .'}'. PHP_EOL;
+        $buffer .= self::INDENT .'{'. PHP_EOL;
+        $buffer .= str_repeat(self::INDENT, 2) .'return $this->'.$propertyName.';'. PHP_EOL;
+        $buffer .= self::INDENT .'}'. PHP_EOL;
+
+        return $buffer;
+    }
+
+    public function generateGetterInterface(string $propertyName, string $returnType, bool $optional = true): string
+    {
+        $getterName = 'get'.ucfirst($propertyName);
+
+        $buffer = self::indent('/**
+ * it returns '. $propertyName .'
+ *
+ * @return '.$returnType. ($optional ? '|null' : '') .' it returns '. $propertyName .'
+ */'. PHP_EOL);
+        $buffer .= self::INDENT.'public function '.$getterName.'()';
+        $buffer .= ': '.($optional ? '?': '').$returnType;
+
+        $buffer .= ';'.PHP_EOL;
 
         return $buffer;
     }
@@ -61,7 +79,7 @@ class PHPCodeGenerator
     {
         $setterName = 'set'.ucfirst($proprtyName);
 
-        $buffer = INDENT.'public function '.$setterName.'($'. $proprtyName;
+        $buffer = 'public function '.$setterName.'($'. $proprtyName;
         if ($defaultValue === 'null') {
             $buffer .= ' = null';
         }
@@ -69,6 +87,19 @@ class PHPCodeGenerator
         $buffer .= '{'. PHP_EOL;
         $buffer .= self::INDENT .'$this->'.$proprtyName.' = $'.$proprtyName.';'. PHP_EOL;
         $buffer .= '}'. PHP_EOL;
+
+        return self::indent($buffer);
+    }
+
+    public function generateSetterInterface(string $proprtyName, string $type, string $defaultValue = null, bool $optional = true): string
+    {
+        $setterName = 'set'.ucfirst($proprtyName);
+
+        $buffer = 'public function '.$setterName.'($'. $proprtyName;
+        if ($defaultValue === 'null') {
+            $buffer .= ' = null';
+        }
+        $buffer .= ');'.PHP_EOL;
 
         return self::indent($buffer);
     }
@@ -83,6 +114,16 @@ class PHPCodeGenerator
         return $buffer;
     }
 
+    public function generateGetterAndSetterInterfaces(string $proprtyName, string $type, string $defaultValue = null, bool $optional = true): string
+    {
+        $buffer = $this->generateGetterInterface($proprtyName, $type, $optional);
+        $buffer .= PHP_EOL;
+        $buffer .= $this->generateSetterInterface($proprtyName, $type, $defaultValue, $optional);
+        $buffer .= PHP_EOL;
+
+        return $buffer;
+    }
+
     public function generateTrait(string $namespace, string $className, array $attributes): string
     {
         $buffer = '<?php'.PHP_EOL.PHP_EOL;
@@ -91,7 +132,7 @@ class PHPCodeGenerator
         $buffer .= '{'.PHP_EOL;
 
         foreach ($attributes as $attribute) {
-            $buffer .= INDENT.'protected $'.$attribute['name'];
+            $buffer .= self::INDENT.'protected $'.$attribute['name'];
 
             if ($attribute['optional']) {
                 $buffer .= ' = null';
@@ -107,7 +148,7 @@ class PHPCodeGenerator
                 $defaultValue = 'null';
             }
 
-            $buffer .= getterSetter($attribute['name'], null, $defaultValue);
+            $buffer .= $this->generateGetterAndSetter($attribute['name'], 'string', $defaultValue, true);
         }
 
         $buffer .= '}'.PHP_EOL;
@@ -115,7 +156,29 @@ class PHPCodeGenerator
         return $buffer;
     }
 
-    public function writeTrait(string $fullpath, string $code)
+    public function generateInterface(string $namespace, string $className, array $attributes): string
+    {
+        $buffer = '<?php'.PHP_EOL.PHP_EOL;
+        $buffer .= 'namespace '. $namespace .';'.PHP_EOL.PHP_EOL;
+        $buffer .= 'interface '. $className . PHP_EOL;
+        $buffer .= '{'.PHP_EOL;
+
+        foreach ($attributes as $attribute) {
+            $defaultValue = null;
+
+            if ($attribute['optional']) {
+                $defaultValue = 'null';
+            }
+
+            $buffer .= $this->generateGetterAndSetterInterfaces($attribute['name'], 'string', $defaultValue, true);
+        }
+
+        $buffer .= '}'.PHP_EOL;
+
+        return $buffer;
+    }
+
+    public function writeFile(string $fullpath, string $code)
     {
         $this->fs->mkdir(dirname($fullpath));
 
@@ -134,21 +197,15 @@ class PHPCodeGenerator
 
 $gen = new PHPCodeGenerator();
 
+$length = count($geninfo);
 
-function phpPropertyName(string $xmlNodeName): string
-{
-    $propertyName = substr($xmlNodeName, strpos($xmlNodeName, ':')+1);
+for ($i = 0; $i < $length; $i++) {
+    $info = $geninfo[$i];
 
-    return preg_replace_callback('/\-([a-zA-Z])/', function ($m) {
-        return strtoupper($m[1]);
-    }, $propertyName);
-}
-
-foreach ($geninfo as $info) {
     $nodes = $xpath->query('//rng:define[@name="'.$info['rng_define_name'].'"]');
     $node = $nodes->item(0);
 
-    $dir = 'lib';
+    $dir = realpath(__DIR__.'/../../lib');
     $namespace = 'OpenDocument';
     $filename = $info['class'];
     $classname = $info['class'];
@@ -163,6 +220,17 @@ foreach ($geninfo as $info) {
         $namespace .= '\\Traits';
         $filename .= 'Trait';
         $classname .= 'Trait';
+
+        $interaceInfo = $info;
+        $interaceInfo['type'] = 'interface';
+        $geninfo[] = $interaceInfo;
+        $length++;
+    }
+    elseif ($info['type'] === 'interface') {
+        $dir .= '/Interfaces';
+        $namespace .= '\\Interfaces';
+        $filename .= 'Interface';
+        $classname .= 'Interface';
     }
 
     $filename .= '.php';
@@ -183,6 +251,13 @@ foreach ($geninfo as $info) {
         ];
     }
 
-    $code = $gen->generateTrait($namespace, $classname, $attributes);
-    $gen->writeTrait($filename, $code);
+    $code = '';
+    if ($info['type'] === 'trait') {
+        $code = $gen->generateTrait($namespace, $classname, $attributes);
+    }
+    elseif ($info['type'] === 'interface') {
+        $code = $gen->generateInterface($namespace, $classname, $attributes);
+    }
+
+    $gen->writeFile($dir.'/'.$filename, $code);
 }

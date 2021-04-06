@@ -170,7 +170,12 @@ trait TextTrait
 
     protected $condition;
 
-    public function getFontVariant()
+    /**
+     * it returns fontVariant
+     *
+     * @return string|null it returns fontVariant
+     */
+    public function getFontVariant(): ?string
     {
         return $this->fontVariant;
     }
@@ -180,7 +185,12 @@ trait TextTrait
         $this->fontVariant = $fontVariant;
     }
 
-    public function getTextTransform()
+    /**
+     * it returns textTransform
+     *
+     * @return string|null it returns textTransform
+     */
+    public function getTextTransform(): ?string
     {
         return $this->textTransform;
     }
@@ -190,7 +200,12 @@ trait TextTrait
         $this->textTransform = $textTransform;
     }
 
-    public function getColor()
+    /**
+     * it returns color
+     *
+     * @return string|null it returns color
+     */
+    public function getColor(): ?string
     {
         return $this->color;
     }
@@ -200,7 +215,12 @@ trait TextTrait
         $this->color = $color;
     }
 
-    public function getUseWindowFontColor()
+    /**
+     * it returns useWindowFontColor
+     *
+     * @return string|null it returns useWindowFontColor
+     */
+    public function getUseWindowFontColor(): ?string
     {
         return $this->useWindowFontColor;
     }
@@ -210,7 +230,12 @@ trait TextTrait
         $this->useWindowFontColor = $useWindowFontColor;
     }
 
-    public function getTextOutline()
+    /**
+     * it returns textOutline
+     *
+     * @return string|null it returns textOutline
+     */
+    public function getTextOutline(): ?string
     {
         return $this->textOutline;
     }
@@ -220,7 +245,12 @@ trait TextTrait
         $this->textOutline = $textOutline;
     }
 
-    public function getTextLineThroughType()
+    /**
+     * it returns textLineThroughType
+     *
+     * @return string|null it returns textLineThroughType
+     */
+    public function getTextLineThroughType(): ?string
     {
         return $this->textLineThroughType;
     }
@@ -230,7 +260,12 @@ trait TextTrait
         $this->textLineThroughType = $textLineThroughType;
     }
 
-    public function getTextLineThroughStyle()
+    /**
+     * it returns textLineThroughStyle
+     *
+     * @return string|null it returns textLineThroughStyle
+     */
+    public function getTextLineThroughStyle(): ?string
     {
         return $this->textLineThroughStyle;
     }
@@ -240,7 +275,12 @@ trait TextTrait
         $this->textLineThroughStyle = $textLineThroughStyle;
     }
 
-    public function getTextLineThroughWidth()
+    /**
+     * it returns textLineThroughWidth
+     *
+     * @return string|null it returns textLineThroughWidth
+     */
+    public function getTextLineThroughWidth(): ?string
     {
         return $this->textLineThroughWidth;
     }
@@ -250,7 +290,12 @@ trait TextTrait
         $this->textLineThroughWidth = $textLineThroughWidth;
     }
 
-    public function getTextLineThroughColor()
+    /**
+     * it returns textLineThroughColor
+     *
+     * @return string|null it returns textLineThroughColor
+     */
+    public function getTextLineThroughColor(): ?string
     {
         return $this->textLineThroughColor;
     }
@@ -260,7 +305,12 @@ trait TextTrait
         $this->textLineThroughColor = $textLineThroughColor;
     }
 
-    public function getTextLineThroughText()
+    /**
+     * it returns textLineThroughText
+     *
+     * @return string|null it returns textLineThroughText
+     */
+    public function getTextLineThroughText(): ?string
     {
         return $this->textLineThroughText;
     }
@@ -270,7 +320,12 @@ trait TextTrait
         $this->textLineThroughText = $textLineThroughText;
     }
 
-    public function getTextLineThroughTextStyle()
+    /**
+     * it returns textLineThroughTextStyle
+     *
+     * @return string|null it returns textLineThroughTextStyle
+     */
+    public function getTextLineThroughTextStyle(): ?string
     {
         return $this->textLineThroughTextStyle;
     }
@@ -280,7 +335,12 @@ trait TextTrait
         $this->textLineThroughTextStyle = $textLineThroughTextStyle;
     }
 
-    public function getTextPosition()
+    /**
+     * it returns textPosition
+     *
+     * @return string|null it returns textPosition
+     */
+    public function getTextPosition(): ?string
     {
         return $this->textPosition;
     }
@@ -290,7 +350,12 @@ trait TextTrait
         $this->textPosition = $textPosition;
     }
 
-    public function getFontName()
+    /**
+     * it returns fontName
+     *
+     * @return string|null it returns fontName
+     */
+    public function getFontName(): ?string
     {
         return $this->fontName;
     }
@@ -300,7 +365,12 @@ trait TextTrait
         $this->fontName = $fontName;
     }
 
-    public function getFontNameAsian()
+    /**
+     * it returns fontNameAsian
+     *
+     * @return string|null it returns fontNameAsian
+     */
+    public function getFontNameAsian(): ?string
     {
         return $this->fontNameAsian;
     }
@@ -310,7 +380,12 @@ trait TextTrait
         $this->fontNameAsian = $fontNameAsian;
     }
 
-    public function getFontNameComplex()
+    /**
+     * it returns fontNameComplex
+     *
+     * @return string|null it returns fontNameComplex
+     */
+    public function getFontNameComplex(): ?string
     {
         return $this->fontNameComplex;
     }
@@ -320,7 +395,12 @@ trait TextTrait
         $this->fontNameComplex = $fontNameComplex;
     }
 
-    public function getFontFamily()
+    /**
+     * it returns fontFamily
+     *
+     * @return string|null it returns fontFamily
+     */
+    public function getFontFamily(): ?string
     {
         return $this->fontFamily;
     }
@@ -330,7 +410,12 @@ trait TextTrait
         $this->fontFamily = $fontFamily;
     }
 
-    public function getFontFamilyAsian()
+    /**
+     * it returns fontFamilyAsian
+     *
+     * @return string|null it returns fontFamilyAsian
+     */
+    public function getFontFamilyAsian(): ?string
     {
         return $this->fontFamilyAsian;
     }
@@ -340,7 +425,12 @@ trait TextTrait
         $this->fontFamilyAsian = $fontFamilyAsian;
     }
 
-    public function getFontFamilyComplex()
+    /**
+     * it returns fontFamilyComplex
+     *
+     * @return string|null it returns fontFamilyComplex
+     */
+    public function getFontFamilyComplex(): ?string
     {
         return $this->fontFamilyComplex;
     }
@@ -350,7 +440,12 @@ trait TextTrait
         $this->fontFamilyComplex = $fontFamilyComplex;
     }
 
-    public function getFontFamilyGeneric()
+    /**
+     * it returns fontFamilyGeneric
+     *
+     * @return string|null it returns fontFamilyGeneric
+     */
+    public function getFontFamilyGeneric(): ?string
     {
         return $this->fontFamilyGeneric;
     }
@@ -360,7 +455,12 @@ trait TextTrait
         $this->fontFamilyGeneric = $fontFamilyGeneric;
     }
 
-    public function getFontFamilyGenericAsian()
+    /**
+     * it returns fontFamilyGenericAsian
+     *
+     * @return string|null it returns fontFamilyGenericAsian
+     */
+    public function getFontFamilyGenericAsian(): ?string
     {
         return $this->fontFamilyGenericAsian;
     }
@@ -370,7 +470,12 @@ trait TextTrait
         $this->fontFamilyGenericAsian = $fontFamilyGenericAsian;
     }
 
-    public function getFontFamilyGenericComplex()
+    /**
+     * it returns fontFamilyGenericComplex
+     *
+     * @return string|null it returns fontFamilyGenericComplex
+     */
+    public function getFontFamilyGenericComplex(): ?string
     {
         return $this->fontFamilyGenericComplex;
     }
@@ -380,7 +485,12 @@ trait TextTrait
         $this->fontFamilyGenericComplex = $fontFamilyGenericComplex;
     }
 
-    public function getFontStyleName()
+    /**
+     * it returns fontStyleName
+     *
+     * @return string|null it returns fontStyleName
+     */
+    public function getFontStyleName(): ?string
     {
         return $this->fontStyleName;
     }
@@ -390,7 +500,12 @@ trait TextTrait
         $this->fontStyleName = $fontStyleName;
     }
 
-    public function getFontStyleNameAsian()
+    /**
+     * it returns fontStyleNameAsian
+     *
+     * @return string|null it returns fontStyleNameAsian
+     */
+    public function getFontStyleNameAsian(): ?string
     {
         return $this->fontStyleNameAsian;
     }
@@ -400,7 +515,12 @@ trait TextTrait
         $this->fontStyleNameAsian = $fontStyleNameAsian;
     }
 
-    public function getFontStyleNameComplex()
+    /**
+     * it returns fontStyleNameComplex
+     *
+     * @return string|null it returns fontStyleNameComplex
+     */
+    public function getFontStyleNameComplex(): ?string
     {
         return $this->fontStyleNameComplex;
     }
@@ -410,7 +530,12 @@ trait TextTrait
         $this->fontStyleNameComplex = $fontStyleNameComplex;
     }
 
-    public function getFontPitch()
+    /**
+     * it returns fontPitch
+     *
+     * @return string|null it returns fontPitch
+     */
+    public function getFontPitch(): ?string
     {
         return $this->fontPitch;
     }
@@ -420,7 +545,12 @@ trait TextTrait
         $this->fontPitch = $fontPitch;
     }
 
-    public function getFontPitchAsian()
+    /**
+     * it returns fontPitchAsian
+     *
+     * @return string|null it returns fontPitchAsian
+     */
+    public function getFontPitchAsian(): ?string
     {
         return $this->fontPitchAsian;
     }
@@ -430,7 +560,12 @@ trait TextTrait
         $this->fontPitchAsian = $fontPitchAsian;
     }
 
-    public function getFontPitchComplex()
+    /**
+     * it returns fontPitchComplex
+     *
+     * @return string|null it returns fontPitchComplex
+     */
+    public function getFontPitchComplex(): ?string
     {
         return $this->fontPitchComplex;
     }
@@ -440,7 +575,12 @@ trait TextTrait
         $this->fontPitchComplex = $fontPitchComplex;
     }
 
-    public function getFontCharset()
+    /**
+     * it returns fontCharset
+     *
+     * @return string|null it returns fontCharset
+     */
+    public function getFontCharset(): ?string
     {
         return $this->fontCharset;
     }
@@ -450,7 +590,12 @@ trait TextTrait
         $this->fontCharset = $fontCharset;
     }
 
-    public function getFontCharsetAsian()
+    /**
+     * it returns fontCharsetAsian
+     *
+     * @return string|null it returns fontCharsetAsian
+     */
+    public function getFontCharsetAsian(): ?string
     {
         return $this->fontCharsetAsian;
     }
@@ -460,7 +605,12 @@ trait TextTrait
         $this->fontCharsetAsian = $fontCharsetAsian;
     }
 
-    public function getFontCharsetComplex()
+    /**
+     * it returns fontCharsetComplex
+     *
+     * @return string|null it returns fontCharsetComplex
+     */
+    public function getFontCharsetComplex(): ?string
     {
         return $this->fontCharsetComplex;
     }
@@ -470,7 +620,12 @@ trait TextTrait
         $this->fontCharsetComplex = $fontCharsetComplex;
     }
 
-    public function getFontSize()
+    /**
+     * it returns fontSize
+     *
+     * @return string|null it returns fontSize
+     */
+    public function getFontSize(): ?string
     {
         return $this->fontSize;
     }
@@ -480,7 +635,12 @@ trait TextTrait
         $this->fontSize = $fontSize;
     }
 
-    public function getFontSizeAsian()
+    /**
+     * it returns fontSizeAsian
+     *
+     * @return string|null it returns fontSizeAsian
+     */
+    public function getFontSizeAsian(): ?string
     {
         return $this->fontSizeAsian;
     }
@@ -490,7 +650,12 @@ trait TextTrait
         $this->fontSizeAsian = $fontSizeAsian;
     }
 
-    public function getFontSizeComplex()
+    /**
+     * it returns fontSizeComplex
+     *
+     * @return string|null it returns fontSizeComplex
+     */
+    public function getFontSizeComplex(): ?string
     {
         return $this->fontSizeComplex;
     }
@@ -500,7 +665,12 @@ trait TextTrait
         $this->fontSizeComplex = $fontSizeComplex;
     }
 
-    public function getFontSizeRel()
+    /**
+     * it returns fontSizeRel
+     *
+     * @return string|null it returns fontSizeRel
+     */
+    public function getFontSizeRel(): ?string
     {
         return $this->fontSizeRel;
     }
@@ -510,7 +680,12 @@ trait TextTrait
         $this->fontSizeRel = $fontSizeRel;
     }
 
-    public function getFontSizeRelAsian()
+    /**
+     * it returns fontSizeRelAsian
+     *
+     * @return string|null it returns fontSizeRelAsian
+     */
+    public function getFontSizeRelAsian(): ?string
     {
         return $this->fontSizeRelAsian;
     }
@@ -520,7 +695,12 @@ trait TextTrait
         $this->fontSizeRelAsian = $fontSizeRelAsian;
     }
 
-    public function getFontSizeRelComplex()
+    /**
+     * it returns fontSizeRelComplex
+     *
+     * @return string|null it returns fontSizeRelComplex
+     */
+    public function getFontSizeRelComplex(): ?string
     {
         return $this->fontSizeRelComplex;
     }
@@ -530,7 +710,12 @@ trait TextTrait
         $this->fontSizeRelComplex = $fontSizeRelComplex;
     }
 
-    public function getScriptType()
+    /**
+     * it returns scriptType
+     *
+     * @return string|null it returns scriptType
+     */
+    public function getScriptType(): ?string
     {
         return $this->scriptType;
     }
@@ -540,7 +725,12 @@ trait TextTrait
         $this->scriptType = $scriptType;
     }
 
-    public function getLetterSpacing()
+    /**
+     * it returns letterSpacing
+     *
+     * @return string|null it returns letterSpacing
+     */
+    public function getLetterSpacing(): ?string
     {
         return $this->letterSpacing;
     }
@@ -550,7 +740,12 @@ trait TextTrait
         $this->letterSpacing = $letterSpacing;
     }
 
-    public function getLanguage()
+    /**
+     * it returns language
+     *
+     * @return string|null it returns language
+     */
+    public function getLanguage(): ?string
     {
         return $this->language;
     }
@@ -560,7 +755,12 @@ trait TextTrait
         $this->language = $language;
     }
 
-    public function getLanguageAsian()
+    /**
+     * it returns languageAsian
+     *
+     * @return string|null it returns languageAsian
+     */
+    public function getLanguageAsian(): ?string
     {
         return $this->languageAsian;
     }
@@ -570,7 +770,12 @@ trait TextTrait
         $this->languageAsian = $languageAsian;
     }
 
-    public function getLanguageComplex()
+    /**
+     * it returns languageComplex
+     *
+     * @return string|null it returns languageComplex
+     */
+    public function getLanguageComplex(): ?string
     {
         return $this->languageComplex;
     }
@@ -580,7 +785,12 @@ trait TextTrait
         $this->languageComplex = $languageComplex;
     }
 
-    public function getCountry()
+    /**
+     * it returns country
+     *
+     * @return string|null it returns country
+     */
+    public function getCountry(): ?string
     {
         return $this->country;
     }
@@ -590,7 +800,12 @@ trait TextTrait
         $this->country = $country;
     }
 
-    public function getCountryAsian()
+    /**
+     * it returns countryAsian
+     *
+     * @return string|null it returns countryAsian
+     */
+    public function getCountryAsian(): ?string
     {
         return $this->countryAsian;
     }
@@ -600,7 +815,12 @@ trait TextTrait
         $this->countryAsian = $countryAsian;
     }
 
-    public function getCountryComplex()
+    /**
+     * it returns countryComplex
+     *
+     * @return string|null it returns countryComplex
+     */
+    public function getCountryComplex(): ?string
     {
         return $this->countryComplex;
     }
@@ -610,7 +830,12 @@ trait TextTrait
         $this->countryComplex = $countryComplex;
     }
 
-    public function getScript()
+    /**
+     * it returns script
+     *
+     * @return string|null it returns script
+     */
+    public function getScript(): ?string
     {
         return $this->script;
     }
@@ -620,7 +845,12 @@ trait TextTrait
         $this->script = $script;
     }
 
-    public function getScriptAsian()
+    /**
+     * it returns scriptAsian
+     *
+     * @return string|null it returns scriptAsian
+     */
+    public function getScriptAsian(): ?string
     {
         return $this->scriptAsian;
     }
@@ -630,7 +860,12 @@ trait TextTrait
         $this->scriptAsian = $scriptAsian;
     }
 
-    public function getScriptComplex()
+    /**
+     * it returns scriptComplex
+     *
+     * @return string|null it returns scriptComplex
+     */
+    public function getScriptComplex(): ?string
     {
         return $this->scriptComplex;
     }
@@ -640,7 +875,12 @@ trait TextTrait
         $this->scriptComplex = $scriptComplex;
     }
 
-    public function getRfcLanguageTag()
+    /**
+     * it returns rfcLanguageTag
+     *
+     * @return string|null it returns rfcLanguageTag
+     */
+    public function getRfcLanguageTag(): ?string
     {
         return $this->rfcLanguageTag;
     }
@@ -650,7 +890,12 @@ trait TextTrait
         $this->rfcLanguageTag = $rfcLanguageTag;
     }
 
-    public function getRfcLanguageTagAsian()
+    /**
+     * it returns rfcLanguageTagAsian
+     *
+     * @return string|null it returns rfcLanguageTagAsian
+     */
+    public function getRfcLanguageTagAsian(): ?string
     {
         return $this->rfcLanguageTagAsian;
     }
@@ -660,7 +905,12 @@ trait TextTrait
         $this->rfcLanguageTagAsian = $rfcLanguageTagAsian;
     }
 
-    public function getRfcLanguageTagComplex()
+    /**
+     * it returns rfcLanguageTagComplex
+     *
+     * @return string|null it returns rfcLanguageTagComplex
+     */
+    public function getRfcLanguageTagComplex(): ?string
     {
         return $this->rfcLanguageTagComplex;
     }
@@ -670,7 +920,12 @@ trait TextTrait
         $this->rfcLanguageTagComplex = $rfcLanguageTagComplex;
     }
 
-    public function getFontStyle()
+    /**
+     * it returns fontStyle
+     *
+     * @return string|null it returns fontStyle
+     */
+    public function getFontStyle(): ?string
     {
         return $this->fontStyle;
     }
@@ -680,7 +935,12 @@ trait TextTrait
         $this->fontStyle = $fontStyle;
     }
 
-    public function getFontStyleAsian()
+    /**
+     * it returns fontStyleAsian
+     *
+     * @return string|null it returns fontStyleAsian
+     */
+    public function getFontStyleAsian(): ?string
     {
         return $this->fontStyleAsian;
     }
@@ -690,7 +950,12 @@ trait TextTrait
         $this->fontStyleAsian = $fontStyleAsian;
     }
 
-    public function getFontStyleComplex()
+    /**
+     * it returns fontStyleComplex
+     *
+     * @return string|null it returns fontStyleComplex
+     */
+    public function getFontStyleComplex(): ?string
     {
         return $this->fontStyleComplex;
     }
@@ -700,7 +965,12 @@ trait TextTrait
         $this->fontStyleComplex = $fontStyleComplex;
     }
 
-    public function getFontRelief()
+    /**
+     * it returns fontRelief
+     *
+     * @return string|null it returns fontRelief
+     */
+    public function getFontRelief(): ?string
     {
         return $this->fontRelief;
     }
@@ -710,7 +980,12 @@ trait TextTrait
         $this->fontRelief = $fontRelief;
     }
 
-    public function getTextShadow()
+    /**
+     * it returns textShadow
+     *
+     * @return string|null it returns textShadow
+     */
+    public function getTextShadow(): ?string
     {
         return $this->textShadow;
     }
@@ -720,7 +995,12 @@ trait TextTrait
         $this->textShadow = $textShadow;
     }
 
-    public function getTextUnderlineType()
+    /**
+     * it returns textUnderlineType
+     *
+     * @return string|null it returns textUnderlineType
+     */
+    public function getTextUnderlineType(): ?string
     {
         return $this->textUnderlineType;
     }
@@ -730,7 +1010,12 @@ trait TextTrait
         $this->textUnderlineType = $textUnderlineType;
     }
 
-    public function getTextUnderlineStyle()
+    /**
+     * it returns textUnderlineStyle
+     *
+     * @return string|null it returns textUnderlineStyle
+     */
+    public function getTextUnderlineStyle(): ?string
     {
         return $this->textUnderlineStyle;
     }
@@ -740,7 +1025,12 @@ trait TextTrait
         $this->textUnderlineStyle = $textUnderlineStyle;
     }
 
-    public function getTextUnderlineWidth()
+    /**
+     * it returns textUnderlineWidth
+     *
+     * @return string|null it returns textUnderlineWidth
+     */
+    public function getTextUnderlineWidth(): ?string
     {
         return $this->textUnderlineWidth;
     }
@@ -750,7 +1040,12 @@ trait TextTrait
         $this->textUnderlineWidth = $textUnderlineWidth;
     }
 
-    public function getTextUnderlineColor()
+    /**
+     * it returns textUnderlineColor
+     *
+     * @return string|null it returns textUnderlineColor
+     */
+    public function getTextUnderlineColor(): ?string
     {
         return $this->textUnderlineColor;
     }
@@ -760,7 +1055,12 @@ trait TextTrait
         $this->textUnderlineColor = $textUnderlineColor;
     }
 
-    public function getTextOverlineType()
+    /**
+     * it returns textOverlineType
+     *
+     * @return string|null it returns textOverlineType
+     */
+    public function getTextOverlineType(): ?string
     {
         return $this->textOverlineType;
     }
@@ -770,7 +1070,12 @@ trait TextTrait
         $this->textOverlineType = $textOverlineType;
     }
 
-    public function getTextOverlineStyle()
+    /**
+     * it returns textOverlineStyle
+     *
+     * @return string|null it returns textOverlineStyle
+     */
+    public function getTextOverlineStyle(): ?string
     {
         return $this->textOverlineStyle;
     }
@@ -780,7 +1085,12 @@ trait TextTrait
         $this->textOverlineStyle = $textOverlineStyle;
     }
 
-    public function getTextOverlineWidth()
+    /**
+     * it returns textOverlineWidth
+     *
+     * @return string|null it returns textOverlineWidth
+     */
+    public function getTextOverlineWidth(): ?string
     {
         return $this->textOverlineWidth;
     }
@@ -790,7 +1100,12 @@ trait TextTrait
         $this->textOverlineWidth = $textOverlineWidth;
     }
 
-    public function getTextOverlineColor()
+    /**
+     * it returns textOverlineColor
+     *
+     * @return string|null it returns textOverlineColor
+     */
+    public function getTextOverlineColor(): ?string
     {
         return $this->textOverlineColor;
     }
@@ -800,7 +1115,12 @@ trait TextTrait
         $this->textOverlineColor = $textOverlineColor;
     }
 
-    public function getTextOverlineMode()
+    /**
+     * it returns textOverlineMode
+     *
+     * @return string|null it returns textOverlineMode
+     */
+    public function getTextOverlineMode(): ?string
     {
         return $this->textOverlineMode;
     }
@@ -810,7 +1130,12 @@ trait TextTrait
         $this->textOverlineMode = $textOverlineMode;
     }
 
-    public function getFontWeight()
+    /**
+     * it returns fontWeight
+     *
+     * @return string|null it returns fontWeight
+     */
+    public function getFontWeight(): ?string
     {
         return $this->fontWeight;
     }
@@ -820,7 +1145,12 @@ trait TextTrait
         $this->fontWeight = $fontWeight;
     }
 
-    public function getFontWeightAsian()
+    /**
+     * it returns fontWeightAsian
+     *
+     * @return string|null it returns fontWeightAsian
+     */
+    public function getFontWeightAsian(): ?string
     {
         return $this->fontWeightAsian;
     }
@@ -830,7 +1160,12 @@ trait TextTrait
         $this->fontWeightAsian = $fontWeightAsian;
     }
 
-    public function getFontWeightComplex()
+    /**
+     * it returns fontWeightComplex
+     *
+     * @return string|null it returns fontWeightComplex
+     */
+    public function getFontWeightComplex(): ?string
     {
         return $this->fontWeightComplex;
     }
@@ -840,7 +1175,12 @@ trait TextTrait
         $this->fontWeightComplex = $fontWeightComplex;
     }
 
-    public function getTextUnderlineMode()
+    /**
+     * it returns textUnderlineMode
+     *
+     * @return string|null it returns textUnderlineMode
+     */
+    public function getTextUnderlineMode(): ?string
     {
         return $this->textUnderlineMode;
     }
@@ -850,7 +1190,12 @@ trait TextTrait
         $this->textUnderlineMode = $textUnderlineMode;
     }
 
-    public function getTextLineThroughMode()
+    /**
+     * it returns textLineThroughMode
+     *
+     * @return string|null it returns textLineThroughMode
+     */
+    public function getTextLineThroughMode(): ?string
     {
         return $this->textLineThroughMode;
     }
@@ -860,7 +1205,12 @@ trait TextTrait
         $this->textLineThroughMode = $textLineThroughMode;
     }
 
-    public function getLetterKerning()
+    /**
+     * it returns letterKerning
+     *
+     * @return string|null it returns letterKerning
+     */
+    public function getLetterKerning(): ?string
     {
         return $this->letterKerning;
     }
@@ -870,7 +1220,12 @@ trait TextTrait
         $this->letterKerning = $letterKerning;
     }
 
-    public function getTextBlinking()
+    /**
+     * it returns textBlinking
+     *
+     * @return string|null it returns textBlinking
+     */
+    public function getTextBlinking(): ?string
     {
         return $this->textBlinking;
     }
@@ -880,7 +1235,12 @@ trait TextTrait
         $this->textBlinking = $textBlinking;
     }
 
-    public function getTextCombine()
+    /**
+     * it returns textCombine
+     *
+     * @return string|null it returns textCombine
+     */
+    public function getTextCombine(): ?string
     {
         return $this->textCombine;
     }
@@ -890,7 +1250,12 @@ trait TextTrait
         $this->textCombine = $textCombine;
     }
 
-    public function getTextCombineStartChar()
+    /**
+     * it returns textCombineStartChar
+     *
+     * @return string|null it returns textCombineStartChar
+     */
+    public function getTextCombineStartChar(): ?string
     {
         return $this->textCombineStartChar;
     }
@@ -900,7 +1265,12 @@ trait TextTrait
         $this->textCombineStartChar = $textCombineStartChar;
     }
 
-    public function getTextCombineEndChar()
+    /**
+     * it returns textCombineEndChar
+     *
+     * @return string|null it returns textCombineEndChar
+     */
+    public function getTextCombineEndChar(): ?string
     {
         return $this->textCombineEndChar;
     }
@@ -910,7 +1280,12 @@ trait TextTrait
         $this->textCombineEndChar = $textCombineEndChar;
     }
 
-    public function getTextEmphasize()
+    /**
+     * it returns textEmphasize
+     *
+     * @return string|null it returns textEmphasize
+     */
+    public function getTextEmphasize(): ?string
     {
         return $this->textEmphasize;
     }
@@ -920,7 +1295,12 @@ trait TextTrait
         $this->textEmphasize = $textEmphasize;
     }
 
-    public function getTextScale()
+    /**
+     * it returns textScale
+     *
+     * @return string|null it returns textScale
+     */
+    public function getTextScale(): ?string
     {
         return $this->textScale;
     }
@@ -930,7 +1310,12 @@ trait TextTrait
         $this->textScale = $textScale;
     }
 
-    public function getTextRotationAngle()
+    /**
+     * it returns textRotationAngle
+     *
+     * @return string|null it returns textRotationAngle
+     */
+    public function getTextRotationAngle(): ?string
     {
         return $this->textRotationAngle;
     }
@@ -940,7 +1325,12 @@ trait TextTrait
         $this->textRotationAngle = $textRotationAngle;
     }
 
-    public function getTextRotationScale()
+    /**
+     * it returns textRotationScale
+     *
+     * @return string|null it returns textRotationScale
+     */
+    public function getTextRotationScale(): ?string
     {
         return $this->textRotationScale;
     }
@@ -950,7 +1340,12 @@ trait TextTrait
         $this->textRotationScale = $textRotationScale;
     }
 
-    public function getHyphenate()
+    /**
+     * it returns hyphenate
+     *
+     * @return string|null it returns hyphenate
+     */
+    public function getHyphenate(): ?string
     {
         return $this->hyphenate;
     }
@@ -960,7 +1355,12 @@ trait TextTrait
         $this->hyphenate = $hyphenate;
     }
 
-    public function getHyphenationRemainCharCount()
+    /**
+     * it returns hyphenationRemainCharCount
+     *
+     * @return string|null it returns hyphenationRemainCharCount
+     */
+    public function getHyphenationRemainCharCount(): ?string
     {
         return $this->hyphenationRemainCharCount;
     }
@@ -970,7 +1370,12 @@ trait TextTrait
         $this->hyphenationRemainCharCount = $hyphenationRemainCharCount;
     }
 
-    public function getHyphenationPushCharCount()
+    /**
+     * it returns hyphenationPushCharCount
+     *
+     * @return string|null it returns hyphenationPushCharCount
+     */
+    public function getHyphenationPushCharCount(): ?string
     {
         return $this->hyphenationPushCharCount;
     }
@@ -980,7 +1385,12 @@ trait TextTrait
         $this->hyphenationPushCharCount = $hyphenationPushCharCount;
     }
 
-    public function getDisplay()
+    /**
+     * it returns display
+     *
+     * @return string|null it returns display
+     */
+    public function getDisplay(): ?string
     {
         return $this->display;
     }
@@ -990,7 +1400,12 @@ trait TextTrait
         $this->display = $display;
     }
 
-    public function getCondition()
+    /**
+     * it returns condition
+     *
+     * @return string|null it returns condition
+     */
+    public function getCondition(): ?string
     {
         return $this->condition;
     }
