@@ -1,0 +1,20 @@
+[
+  {
+    "rng_define_name": "common-background-color-attlist",
+    "type": "trait",
+    "section": "style",
+    "class": "BackgroundColor"
+  },
+  {
+    "rng_define_name": "common-border-attlist",
+    "type": "trait",
+    "section": "style",
+    "class": "Border"
+  },
+  {
+    "rng_define_name": "style-text-properties-attlist",
+    "type": "trait",
+    "section": "style",
+    "class": "Text"
+  }
+]
