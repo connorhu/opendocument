@@ -2,7 +2,6 @@
 
 namespace OpenDocument\Style;
 
-use Traits\BackgroundColorTrait;
 // https://docs.oasis-open.org/office/OpenDocument/v1.3/cs02/schemas/
 // <style:background-image> 17.3, <style:drop-cap> 17.9 and <style:tab-stops> 17.7.
 /**
@@ -62,7 +61,8 @@ use Traits\BackgroundColorTrait;
  */
 class ParagraphStyle extends Style
 {
-    use BackgroundColor;
+    use Traits\BackgroundColorTrait;
+    use Traits\BorderTrait;
 
     // fo:border
     // <style:graphic-properties> 17.21, <style:header-footer-properties> 17.5, <style:page-layout-properties> 17.2, <style:paragraph-properties> 17.6 and <style:table-cell-properties> 17.18.
