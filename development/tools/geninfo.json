@@ -88,5 +88,11 @@
     "type": "trait",
     "section": "style",
     "class": "Text"
+  },
+  {
+    "rng_define_name": "style-paragraph-properties-attlist",
+    "type": "class",
+    "section": "style",
+    "class": "ParagraphStyle"
   }
 ]

@@ -180,6 +180,51 @@ class PHPCodeGenerator
         return $buffer;
     }
 
+    public function generateClass(string $namespace, string $className, array $attributes, array $traits = [], array $interfaces = []): string
+    {
+        $buffer = '<?php'.PHP_EOL.PHP_EOL;
+        $buffer .= 'namespace '. $namespace .';'.PHP_EOL.PHP_EOL;
+        $buffer .= <<<PHPDOC
+/**
+ * @see https://docs.oasis-open.org/office/OpenDocument/v1.3/os/part3-schema/OpenDocument-v1.3-os-part3-schema.html
+ */
+
+PHPDOC;
+        $buffer .= 'class '. $className .' extends Style'. (count($interfaces) > 0 ? ' implements' : ''). PHP_EOL;
+        if (count($interfaces) > 0) {
+            $buffer .= self::INDENT.implode(','.PHP_EOL.self::INDENT, $interfaces).PHP_EOL;
+        }
+        $buffer .= '{'.PHP_EOL;
+
+        if (count($traits) > 0) {
+            $buffer .= self::INDENT.'use '.implode(';'.PHP_EOL.self::INDENT.'use ', $traits).';'.PHP_EOL.PHP_EOL;
+        }
+
+        foreach ($attributes as $attribute) {
+            $buffer .= self::INDENT.'protected '.self::getPhpType($attribute['type'], $attribute['optional']).' $'.$attribute['name'];
+
+            if ($attribute['optional']) {
+                $buffer .= ' = null';
+            }
+
+            $buffer .= ';'.PHP_EOL.PHP_EOL;
+        }
+
+        foreach ($attributes as $attribute) {
+            $defaultValue = null;
+
+            if ($attribute['optional']) {
+                $defaultValue = 'null';
+            }
+
+            $buffer .= $this->generateGetterAndSetter($attribute['name'], $attribute['type'], $defaultValue, $attribute['optional']);
+        }
+
+        $buffer .= '}'.PHP_EOL;
+
+        return $buffer;
+    }
+
     public function generateInterface(string $namespace, string $className, array $attributes): string
     {
         $buffer = '<?php'.PHP_EOL.PHP_EOL;
@@ -292,9 +337,29 @@ for ($i = 0; $i < $length; $i++) {
     $code = '';
     if ($info['type'] === 'trait') {
         $code = $gen->generateTrait($namespace, $classname, $attributes);
-    }
-    elseif ($info['type'] === 'interface') {
+    } elseif ($info['type'] === 'interface') {
         $code = $gen->generateInterface($namespace, $classname, $attributes);
+    } elseif ($info['type'] === 'class') {
+        $traits = [];
+        $interfaces = [];
+        foreach ($xpath->query('./rng:interleave/rng:ref', $node) as $reference) {
+            $rngReferences = $reference->getAttribute('name');
+
+            foreach ($geninfo as $item) {
+                if ($item['rng_define_name'] === $rngReferences) {
+                    $traits[sprintf('Traits\\%sTrait', $item['class'])] = 1;
+                    $interfaces[sprintf('Interfaces\\%sInterface', $item['class'])] = 1;
+                }
+            }
+        }
+
+        $traits = array_keys($traits);
+        $interfaces = array_keys($interfaces);
+
+        sort($traits);
+        sort($interfaces);
+
+        $code = $gen->generateClass($namespace, $classname, $attributes, traits: $traits, interfaces: $interfaces);
     }
 
     $gen->writeFile($dir.'/'.$filename, $code);
