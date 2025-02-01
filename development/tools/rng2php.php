@@ -23,7 +23,7 @@ class PHPAttribute
 
 class PHPCodeGenerator
 {
-    const INDENT = '    ';
+    public const string INDENT = '    ';
     protected Filesystem $fs;
 
     public function __construct()
