@@ -75,17 +75,17 @@ class PHPCodeGenerator
         return $buffer;
     }
 
-    public function generateSetter(string $proprtyName, string $type, string $defaultValue = null, bool $optional = true): string
+    public function generateSetter(string $propertyName, string $type, string $defaultValue = null, bool $optional = true): string
     {
-        $setterName = 'set'.ucfirst($proprtyName);
+        $setterName = 'set'.ucfirst($propertyName);
 
-        $buffer = 'public function '.$setterName.'($'. $proprtyName;
+        $buffer = 'public function '.$setterName.'($'. $propertyName;
         if ($defaultValue === 'null') {
             $buffer .= ' = null';
         }
         $buffer .= ')'.PHP_EOL;
         $buffer .= '{'. PHP_EOL;
-        $buffer .= self::INDENT .'$this->'.$proprtyName.' = $'.$proprtyName.';'. PHP_EOL;
+        $buffer .= self::INDENT .'$this->'.$propertyName.' = $'.$propertyName.';'. PHP_EOL;
         $buffer .= '}'. PHP_EOL;
 
         return self::indent($buffer);
