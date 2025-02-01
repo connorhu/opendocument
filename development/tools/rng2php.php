@@ -205,7 +205,7 @@ for ($i = 0; $i < $length; $i++) {
     $nodes = $xpath->query('//rng:define[@name="'.$info['rng_define_name'].'"]');
     $node = $nodes->item(0);
 
-    $dir = realpath(__DIR__.'/../../lib');
+    $dir = realpath(__DIR__.'/../../src');
     $namespace = 'OpenDocument';
     $filename = $info['class'];
     $classname = $info['class'];
