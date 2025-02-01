@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenDocument\Style\Traits;
+namespace src\Style\Traits;
 
 trait BackgroundColorTrait
 {

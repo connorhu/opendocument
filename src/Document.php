@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenDocument;
+namespace src;
 
 class Document
 {
