@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Style;
+namespace OpenDocument\Style;
 /*
  * chart: family name of styles for charts.
  * •drawing-page: family name of styles for drawing pages.

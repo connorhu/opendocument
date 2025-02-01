@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Style\Interfaces;
+namespace OpenDocument\Style\Interfaces;
 
 interface BorderInterface
 {

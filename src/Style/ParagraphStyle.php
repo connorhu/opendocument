@@ -1,8 +1,8 @@
 <?php
 
-namespace src\Style;
+namespace OpenDocument\Style;
 
-use src\Style\Traits\BackgroundColor;
+use Traits\BackgroundColorTrait;
 // https://docs.oasis-open.org/office/OpenDocument/v1.3/cs02/schemas/
 // <style:background-image> 17.3, <style:drop-cap> 17.9 and <style:tab-stops> 17.7.
 /**
