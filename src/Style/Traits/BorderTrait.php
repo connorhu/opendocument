@@ -4,89 +4,89 @@ namespace OpenDocument\Style\Traits;
 
 trait BorderTrait
 {
-    protected $border = null;
+    protected ?string $border = null;
 
-    protected $borderTop = null;
+    protected ?string $borderTop = null;
 
-    protected $borderBottom = null;
+    protected ?string $borderBottom = null;
 
-    protected $borderLeft = null;
+    protected ?string $borderLeft = null;
 
-    protected $borderRight = null;
+    protected ?string $borderRight = null;
 
     /**
-     * it returns border
-     *
-     * @return string|null it returns border
+     * @return string|null
      */
     public function getBorder(): ?string
     {
         return $this->border;
     }
 
-    public function setBorder($border = null)
+    public function setBorder(?string $border = null)
     {
         $this->border = $border;
+    
+        return $this;
     }
 
     /**
-     * it returns borderTop
-     *
-     * @return string|null it returns borderTop
+     * @return string|null
      */
     public function getBorderTop(): ?string
     {
         return $this->borderTop;
     }
 
-    public function setBorderTop($borderTop = null)
+    public function setBorderTop(?string $borderTop = null)
     {
         $this->borderTop = $borderTop;
+    
+        return $this;
     }
 
     /**
-     * it returns borderBottom
-     *
-     * @return string|null it returns borderBottom
+     * @return string|null
      */
     public function getBorderBottom(): ?string
     {
         return $this->borderBottom;
     }
 
-    public function setBorderBottom($borderBottom = null)
+    public function setBorderBottom(?string $borderBottom = null)
     {
         $this->borderBottom = $borderBottom;
+    
+        return $this;
     }
 
     /**
-     * it returns borderLeft
-     *
-     * @return string|null it returns borderLeft
+     * @return string|null
      */
     public function getBorderLeft(): ?string
     {
         return $this->borderLeft;
     }
 
-    public function setBorderLeft($borderLeft = null)
+    public function setBorderLeft(?string $borderLeft = null)
     {
         $this->borderLeft = $borderLeft;
+    
+        return $this;
     }
 
     /**
-     * it returns borderRight
-     *
-     * @return string|null it returns borderRight
+     * @return string|null
      */
     public function getBorderRight(): ?string
     {
         return $this->borderRight;
     }
 
-    public function setBorderRight($borderRight = null)
+    public function setBorderRight(?string $borderRight = null)
     {
         $this->borderRight = $borderRight;
+    
+        return $this;
     }
 
 }

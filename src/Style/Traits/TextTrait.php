@@ -4,1415 +4,1415 @@ namespace OpenDocument\Style\Traits;
 
 trait TextTrait
 {
-    protected $fontVariant = null;
+    protected ?string $fontVariant = null;
 
-    protected $textTransform = null;
+    protected ?string $textTransform = null;
 
-    protected $color = null;
+    protected ?string $color = null;
 
-    protected $useWindowFontColor = null;
+    protected ?bool $useWindowFontColor = null;
 
-    protected $textOutline = null;
+    protected ?bool $textOutline = null;
 
-    protected $textLineThroughType = null;
+    protected ?string $textLineThroughType = null;
 
-    protected $textLineThroughStyle = null;
+    protected ?string $textLineThroughStyle = null;
 
-    protected $textLineThroughWidth = null;
+    protected ?string $textLineThroughWidth = null;
 
-    protected $textLineThroughColor = null;
+    protected ?string $textLineThroughColor = null;
 
-    protected $textLineThroughText = null;
+    protected ?string $textLineThroughText = null;
 
-    protected $textLineThroughTextStyle = null;
+    protected ?string $textLineThroughTextStyle = null;
 
-    protected $textPosition = null;
+    protected ?string $textPosition = null;
 
-    protected $fontName = null;
+    protected ?string $fontName = null;
 
-    protected $fontNameAsian = null;
+    protected ?string $fontNameAsian = null;
 
-    protected $fontNameComplex = null;
+    protected ?string $fontNameComplex = null;
 
-    protected $fontFamily = null;
+    protected ?string $fontFamily = null;
 
-    protected $fontFamilyAsian = null;
+    protected ?string $fontFamilyAsian = null;
 
-    protected $fontFamilyComplex = null;
+    protected ?string $fontFamilyComplex = null;
 
-    protected $fontFamilyGeneric = null;
+    protected ?string $fontFamilyGeneric = null;
 
-    protected $fontFamilyGenericAsian = null;
+    protected ?string $fontFamilyGenericAsian = null;
 
-    protected $fontFamilyGenericComplex = null;
+    protected ?string $fontFamilyGenericComplex = null;
 
-    protected $fontStyleName = null;
+    protected ?string $fontStyleName = null;
 
-    protected $fontStyleNameAsian = null;
+    protected ?string $fontStyleNameAsian = null;
 
-    protected $fontStyleNameComplex = null;
+    protected ?string $fontStyleNameComplex = null;
 
-    protected $fontPitch = null;
+    protected ?string $fontPitch = null;
 
-    protected $fontPitchAsian = null;
+    protected ?string $fontPitchAsian = null;
 
-    protected $fontPitchComplex = null;
+    protected ?string $fontPitchComplex = null;
 
-    protected $fontCharset = null;
+    protected ?string $fontCharset = null;
 
-    protected $fontCharsetAsian = null;
+    protected ?string $fontCharsetAsian = null;
 
-    protected $fontCharsetComplex = null;
+    protected ?string $fontCharsetComplex = null;
 
-    protected $fontSize = null;
+    protected ?string $fontSize = null;
 
-    protected $fontSizeAsian = null;
+    protected ?string $fontSizeAsian = null;
 
-    protected $fontSizeComplex = null;
+    protected ?string $fontSizeComplex = null;
 
-    protected $fontSizeRel = null;
+    protected ?string $fontSizeRel = null;
 
-    protected $fontSizeRelAsian = null;
+    protected ?string $fontSizeRelAsian = null;
 
-    protected $fontSizeRelComplex = null;
+    protected ?string $fontSizeRelComplex = null;
 
-    protected $scriptType = null;
+    protected ?string $scriptType = null;
 
-    protected $letterSpacing = null;
+    protected ?string $letterSpacing = null;
 
-    protected $language = null;
+    protected ?string $language = null;
 
-    protected $languageAsian = null;
+    protected ?string $languageAsian = null;
 
-    protected $languageComplex = null;
+    protected ?string $languageComplex = null;
 
-    protected $country = null;
+    protected ?string $country = null;
 
-    protected $countryAsian = null;
+    protected ?string $countryAsian = null;
 
-    protected $countryComplex = null;
+    protected ?string $countryComplex = null;
 
-    protected $script = null;
+    protected ?string $script = null;
 
-    protected $scriptAsian = null;
+    protected ?string $scriptAsian = null;
 
-    protected $scriptComplex = null;
+    protected ?string $scriptComplex = null;
 
-    protected $rfcLanguageTag = null;
+    protected ?string $rfcLanguageTag = null;
 
-    protected $rfcLanguageTagAsian = null;
+    protected ?string $rfcLanguageTagAsian = null;
 
-    protected $rfcLanguageTagComplex = null;
+    protected ?string $rfcLanguageTagComplex = null;
 
-    protected $fontStyle = null;
+    protected ?string $fontStyle = null;
 
-    protected $fontStyleAsian = null;
+    protected ?string $fontStyleAsian = null;
 
-    protected $fontStyleComplex = null;
+    protected ?string $fontStyleComplex = null;
 
-    protected $fontRelief = null;
+    protected ?string $fontRelief = null;
 
-    protected $textShadow = null;
+    protected ?string $textShadow = null;
 
-    protected $textUnderlineType = null;
+    protected ?string $textUnderlineType = null;
 
-    protected $textUnderlineStyle = null;
+    protected ?string $textUnderlineStyle = null;
 
-    protected $textUnderlineWidth = null;
+    protected ?string $textUnderlineWidth = null;
 
-    protected $textUnderlineColor = null;
+    protected ?string $textUnderlineColor = null;
 
-    protected $textOverlineType = null;
+    protected ?string $textOverlineType = null;
 
-    protected $textOverlineStyle = null;
+    protected ?string $textOverlineStyle = null;
 
-    protected $textOverlineWidth = null;
+    protected ?string $textOverlineWidth = null;
 
-    protected $textOverlineColor = null;
+    protected ?string $textOverlineColor = null;
 
-    protected $textOverlineMode = null;
+    protected ?string $textOverlineMode = null;
 
-    protected $fontWeight = null;
+    protected ?string $fontWeight = null;
 
-    protected $fontWeightAsian = null;
+    protected ?string $fontWeightAsian = null;
 
-    protected $fontWeightComplex = null;
+    protected ?string $fontWeightComplex = null;
 
-    protected $textUnderlineMode = null;
+    protected ?string $textUnderlineMode = null;
 
-    protected $textLineThroughMode = null;
+    protected ?string $textLineThroughMode = null;
 
-    protected $letterKerning = null;
+    protected ?bool $letterKerning = null;
 
-    protected $textBlinking = null;
+    protected ?bool $textBlinking = null;
 
-    protected $textCombine = null;
+    protected ?string $textCombine = null;
 
-    protected $textCombineStartChar = null;
+    protected ?string $textCombineStartChar = null;
 
-    protected $textCombineEndChar = null;
+    protected ?string $textCombineEndChar = null;
 
-    protected $textEmphasize = null;
+    protected ?string $textEmphasize = null;
 
-    protected $textScale = null;
+    protected ?string $textScale = null;
 
-    protected $textRotationAngle = null;
+    protected ?string $textRotationAngle = null;
 
-    protected $textRotationScale = null;
+    protected ?string $textRotationScale = null;
 
-    protected $hyphenate = null;
+    protected ?bool $hyphenate = null;
 
-    protected $hyphenationRemainCharCount = null;
+    protected ?string $hyphenationRemainCharCount = null;
 
-    protected $hyphenationPushCharCount = null;
+    protected ?string $hyphenationPushCharCount = null;
 
-    protected $display;
+    protected string $display;
 
-    protected $condition;
+    protected string $condition;
 
     /**
-     * it returns fontVariant
-     *
-     * @return string|null it returns fontVariant
+     * @return string|null
      */
     public function getFontVariant(): ?string
     {
         return $this->fontVariant;
     }
 
-    public function setFontVariant($fontVariant = null)
+    public function setFontVariant(?string $fontVariant = null)
     {
         $this->fontVariant = $fontVariant;
+    
+        return $this;
     }
 
     /**
-     * it returns textTransform
-     *
-     * @return string|null it returns textTransform
+     * @return string|null
      */
     public function getTextTransform(): ?string
     {
         return $this->textTransform;
     }
 
-    public function setTextTransform($textTransform = null)
+    public function setTextTransform(?string $textTransform = null)
     {
         $this->textTransform = $textTransform;
+    
+        return $this;
     }
 
     /**
-     * it returns color
-     *
-     * @return string|null it returns color
+     * @return string|null
      */
     public function getColor(): ?string
     {
         return $this->color;
     }
 
-    public function setColor($color = null)
+    public function setColor(?string $color = null)
     {
         $this->color = $color;
+    
+        return $this;
     }
 
     /**
-     * it returns useWindowFontColor
-     *
-     * @return string|null it returns useWindowFontColor
+     * @return bool|null
      */
-    public function getUseWindowFontColor(): ?string
+    public function getUseWindowFontColor(): ?bool
     {
         return $this->useWindowFontColor;
     }
 
-    public function setUseWindowFontColor($useWindowFontColor = null)
+    public function setUseWindowFontColor(?bool $useWindowFontColor = null)
     {
         $this->useWindowFontColor = $useWindowFontColor;
+    
+        return $this;
     }
 
     /**
-     * it returns textOutline
-     *
-     * @return string|null it returns textOutline
+     * @return bool|null
      */
-    public function getTextOutline(): ?string
+    public function getTextOutline(): ?bool
     {
         return $this->textOutline;
     }
 
-    public function setTextOutline($textOutline = null)
+    public function setTextOutline(?bool $textOutline = null)
     {
         $this->textOutline = $textOutline;
+    
+        return $this;
     }
 
     /**
-     * it returns textLineThroughType
-     *
-     * @return string|null it returns textLineThroughType
+     * @return string|null
      */
     public function getTextLineThroughType(): ?string
     {
         return $this->textLineThroughType;
     }
 
-    public function setTextLineThroughType($textLineThroughType = null)
+    public function setTextLineThroughType(?string $textLineThroughType = null)
     {
         $this->textLineThroughType = $textLineThroughType;
+    
+        return $this;
     }
 
     /**
-     * it returns textLineThroughStyle
-     *
-     * @return string|null it returns textLineThroughStyle
+     * @return string|null
      */
     public function getTextLineThroughStyle(): ?string
     {
         return $this->textLineThroughStyle;
     }
 
-    public function setTextLineThroughStyle($textLineThroughStyle = null)
+    public function setTextLineThroughStyle(?string $textLineThroughStyle = null)
     {
         $this->textLineThroughStyle = $textLineThroughStyle;
+    
+        return $this;
     }
 
     /**
-     * it returns textLineThroughWidth
-     *
-     * @return string|null it returns textLineThroughWidth
+     * @return string|null
      */
     public function getTextLineThroughWidth(): ?string
     {
         return $this->textLineThroughWidth;
     }
 
-    public function setTextLineThroughWidth($textLineThroughWidth = null)
+    public function setTextLineThroughWidth(?string $textLineThroughWidth = null)
     {
         $this->textLineThroughWidth = $textLineThroughWidth;
+    
+        return $this;
     }
 
     /**
-     * it returns textLineThroughColor
-     *
-     * @return string|null it returns textLineThroughColor
+     * @return string|null
      */
     public function getTextLineThroughColor(): ?string
     {
         return $this->textLineThroughColor;
     }
 
-    public function setTextLineThroughColor($textLineThroughColor = null)
+    public function setTextLineThroughColor(?string $textLineThroughColor = null)
     {
         $this->textLineThroughColor = $textLineThroughColor;
+    
+        return $this;
     }
 
     /**
-     * it returns textLineThroughText
-     *
-     * @return string|null it returns textLineThroughText
+     * @return string|null
      */
     public function getTextLineThroughText(): ?string
     {
         return $this->textLineThroughText;
     }
 
-    public function setTextLineThroughText($textLineThroughText = null)
+    public function setTextLineThroughText(?string $textLineThroughText = null)
     {
         $this->textLineThroughText = $textLineThroughText;
+    
+        return $this;
     }
 
     /**
-     * it returns textLineThroughTextStyle
-     *
-     * @return string|null it returns textLineThroughTextStyle
+     * @return string|null
      */
     public function getTextLineThroughTextStyle(): ?string
     {
         return $this->textLineThroughTextStyle;
     }
 
-    public function setTextLineThroughTextStyle($textLineThroughTextStyle = null)
+    public function setTextLineThroughTextStyle(?string $textLineThroughTextStyle = null)
     {
         $this->textLineThroughTextStyle = $textLineThroughTextStyle;
+    
+        return $this;
     }
 
     /**
-     * it returns textPosition
-     *
-     * @return string|null it returns textPosition
+     * @return string|null
      */
     public function getTextPosition(): ?string
     {
         return $this->textPosition;
     }
 
-    public function setTextPosition($textPosition = null)
+    public function setTextPosition(?string $textPosition = null)
     {
         $this->textPosition = $textPosition;
+    
+        return $this;
     }
 
     /**
-     * it returns fontName
-     *
-     * @return string|null it returns fontName
+     * @return string|null
      */
     public function getFontName(): ?string
     {
         return $this->fontName;
     }
 
-    public function setFontName($fontName = null)
+    public function setFontName(?string $fontName = null)
     {
         $this->fontName = $fontName;
+    
+        return $this;
     }
 
     /**
-     * it returns fontNameAsian
-     *
-     * @return string|null it returns fontNameAsian
+     * @return string|null
      */
     public function getFontNameAsian(): ?string
     {
         return $this->fontNameAsian;
     }
 
-    public function setFontNameAsian($fontNameAsian = null)
+    public function setFontNameAsian(?string $fontNameAsian = null)
     {
         $this->fontNameAsian = $fontNameAsian;
+    
+        return $this;
     }
 
     /**
-     * it returns fontNameComplex
-     *
-     * @return string|null it returns fontNameComplex
+     * @return string|null
      */
     public function getFontNameComplex(): ?string
     {
         return $this->fontNameComplex;
     }
 
-    public function setFontNameComplex($fontNameComplex = null)
+    public function setFontNameComplex(?string $fontNameComplex = null)
     {
         $this->fontNameComplex = $fontNameComplex;
+    
+        return $this;
     }
 
     /**
-     * it returns fontFamily
-     *
-     * @return string|null it returns fontFamily
+     * @return string|null
      */
     public function getFontFamily(): ?string
     {
         return $this->fontFamily;
     }
 
-    public function setFontFamily($fontFamily = null)
+    public function setFontFamily(?string $fontFamily = null)
     {
         $this->fontFamily = $fontFamily;
+    
+        return $this;
     }
 
     /**
-     * it returns fontFamilyAsian
-     *
-     * @return string|null it returns fontFamilyAsian
+     * @return string|null
      */
     public function getFontFamilyAsian(): ?string
     {
         return $this->fontFamilyAsian;
     }
 
-    public function setFontFamilyAsian($fontFamilyAsian = null)
+    public function setFontFamilyAsian(?string $fontFamilyAsian = null)
     {
         $this->fontFamilyAsian = $fontFamilyAsian;
+    
+        return $this;
     }
 
     /**
-     * it returns fontFamilyComplex
-     *
-     * @return string|null it returns fontFamilyComplex
+     * @return string|null
      */
     public function getFontFamilyComplex(): ?string
     {
         return $this->fontFamilyComplex;
     }
 
-    public function setFontFamilyComplex($fontFamilyComplex = null)
+    public function setFontFamilyComplex(?string $fontFamilyComplex = null)
     {
         $this->fontFamilyComplex = $fontFamilyComplex;
+    
+        return $this;
     }
 
     /**
-     * it returns fontFamilyGeneric
-     *
-     * @return string|null it returns fontFamilyGeneric
+     * @return string|null
      */
     public function getFontFamilyGeneric(): ?string
     {
         return $this->fontFamilyGeneric;
     }
 
-    public function setFontFamilyGeneric($fontFamilyGeneric = null)
+    public function setFontFamilyGeneric(?string $fontFamilyGeneric = null)
     {
         $this->fontFamilyGeneric = $fontFamilyGeneric;
+    
+        return $this;
     }
 
     /**
-     * it returns fontFamilyGenericAsian
-     *
-     * @return string|null it returns fontFamilyGenericAsian
+     * @return string|null
      */
     public function getFontFamilyGenericAsian(): ?string
     {
         return $this->fontFamilyGenericAsian;
     }
 
-    public function setFontFamilyGenericAsian($fontFamilyGenericAsian = null)
+    public function setFontFamilyGenericAsian(?string $fontFamilyGenericAsian = null)
     {
         $this->fontFamilyGenericAsian = $fontFamilyGenericAsian;
+    
+        return $this;
     }
 
     /**
-     * it returns fontFamilyGenericComplex
-     *
-     * @return string|null it returns fontFamilyGenericComplex
+     * @return string|null
      */
     public function getFontFamilyGenericComplex(): ?string
     {
         return $this->fontFamilyGenericComplex;
     }
 
-    public function setFontFamilyGenericComplex($fontFamilyGenericComplex = null)
+    public function setFontFamilyGenericComplex(?string $fontFamilyGenericComplex = null)
     {
         $this->fontFamilyGenericComplex = $fontFamilyGenericComplex;
+    
+        return $this;
     }
 
     /**
-     * it returns fontStyleName
-     *
-     * @return string|null it returns fontStyleName
+     * @return string|null
      */
     public function getFontStyleName(): ?string
     {
         return $this->fontStyleName;
     }
 
-    public function setFontStyleName($fontStyleName = null)
+    public function setFontStyleName(?string $fontStyleName = null)
     {
         $this->fontStyleName = $fontStyleName;
+    
+        return $this;
     }
 
     /**
-     * it returns fontStyleNameAsian
-     *
-     * @return string|null it returns fontStyleNameAsian
+     * @return string|null
      */
     public function getFontStyleNameAsian(): ?string
     {
         return $this->fontStyleNameAsian;
     }
 
-    public function setFontStyleNameAsian($fontStyleNameAsian = null)
+    public function setFontStyleNameAsian(?string $fontStyleNameAsian = null)
     {
         $this->fontStyleNameAsian = $fontStyleNameAsian;
+    
+        return $this;
     }
 
     /**
-     * it returns fontStyleNameComplex
-     *
-     * @return string|null it returns fontStyleNameComplex
+     * @return string|null
      */
     public function getFontStyleNameComplex(): ?string
     {
         return $this->fontStyleNameComplex;
     }
 
-    public function setFontStyleNameComplex($fontStyleNameComplex = null)
+    public function setFontStyleNameComplex(?string $fontStyleNameComplex = null)
     {
         $this->fontStyleNameComplex = $fontStyleNameComplex;
+    
+        return $this;
     }
 
     /**
-     * it returns fontPitch
-     *
-     * @return string|null it returns fontPitch
+     * @return string|null
      */
     public function getFontPitch(): ?string
     {
         return $this->fontPitch;
     }
 
-    public function setFontPitch($fontPitch = null)
+    public function setFontPitch(?string $fontPitch = null)
     {
         $this->fontPitch = $fontPitch;
+    
+        return $this;
     }
 
     /**
-     * it returns fontPitchAsian
-     *
-     * @return string|null it returns fontPitchAsian
+     * @return string|null
      */
     public function getFontPitchAsian(): ?string
     {
         return $this->fontPitchAsian;
     }
 
-    public function setFontPitchAsian($fontPitchAsian = null)
+    public function setFontPitchAsian(?string $fontPitchAsian = null)
     {
         $this->fontPitchAsian = $fontPitchAsian;
+    
+        return $this;
     }
 
     /**
-     * it returns fontPitchComplex
-     *
-     * @return string|null it returns fontPitchComplex
+     * @return string|null
      */
     public function getFontPitchComplex(): ?string
     {
         return $this->fontPitchComplex;
     }
 
-    public function setFontPitchComplex($fontPitchComplex = null)
+    public function setFontPitchComplex(?string $fontPitchComplex = null)
     {
         $this->fontPitchComplex = $fontPitchComplex;
+    
+        return $this;
     }
 
     /**
-     * it returns fontCharset
-     *
-     * @return string|null it returns fontCharset
+     * @return string|null
      */
     public function getFontCharset(): ?string
     {
         return $this->fontCharset;
     }
 
-    public function setFontCharset($fontCharset = null)
+    public function setFontCharset(?string $fontCharset = null)
     {
         $this->fontCharset = $fontCharset;
+    
+        return $this;
     }
 
     /**
-     * it returns fontCharsetAsian
-     *
-     * @return string|null it returns fontCharsetAsian
+     * @return string|null
      */
     public function getFontCharsetAsian(): ?string
     {
         return $this->fontCharsetAsian;
     }
 
-    public function setFontCharsetAsian($fontCharsetAsian = null)
+    public function setFontCharsetAsian(?string $fontCharsetAsian = null)
     {
         $this->fontCharsetAsian = $fontCharsetAsian;
+    
+        return $this;
     }
 
     /**
-     * it returns fontCharsetComplex
-     *
-     * @return string|null it returns fontCharsetComplex
+     * @return string|null
      */
     public function getFontCharsetComplex(): ?string
     {
         return $this->fontCharsetComplex;
     }
 
-    public function setFontCharsetComplex($fontCharsetComplex = null)
+    public function setFontCharsetComplex(?string $fontCharsetComplex = null)
     {
         $this->fontCharsetComplex = $fontCharsetComplex;
+    
+        return $this;
     }
 
     /**
-     * it returns fontSize
-     *
-     * @return string|null it returns fontSize
+     * @return string|null
      */
     public function getFontSize(): ?string
     {
         return $this->fontSize;
     }
 
-    public function setFontSize($fontSize = null)
+    public function setFontSize(?string $fontSize = null)
     {
         $this->fontSize = $fontSize;
+    
+        return $this;
     }
 
     /**
-     * it returns fontSizeAsian
-     *
-     * @return string|null it returns fontSizeAsian
+     * @return string|null
      */
     public function getFontSizeAsian(): ?string
     {
         return $this->fontSizeAsian;
     }
 
-    public function setFontSizeAsian($fontSizeAsian = null)
+    public function setFontSizeAsian(?string $fontSizeAsian = null)
     {
         $this->fontSizeAsian = $fontSizeAsian;
+    
+        return $this;
     }
 
     /**
-     * it returns fontSizeComplex
-     *
-     * @return string|null it returns fontSizeComplex
+     * @return string|null
      */
     public function getFontSizeComplex(): ?string
     {
         return $this->fontSizeComplex;
     }
 
-    public function setFontSizeComplex($fontSizeComplex = null)
+    public function setFontSizeComplex(?string $fontSizeComplex = null)
     {
         $this->fontSizeComplex = $fontSizeComplex;
+    
+        return $this;
     }
 
     /**
-     * it returns fontSizeRel
-     *
-     * @return string|null it returns fontSizeRel
+     * @return string|null
      */
     public function getFontSizeRel(): ?string
     {
         return $this->fontSizeRel;
     }
 
-    public function setFontSizeRel($fontSizeRel = null)
+    public function setFontSizeRel(?string $fontSizeRel = null)
     {
         $this->fontSizeRel = $fontSizeRel;
+    
+        return $this;
     }
 
     /**
-     * it returns fontSizeRelAsian
-     *
-     * @return string|null it returns fontSizeRelAsian
+     * @return string|null
      */
     public function getFontSizeRelAsian(): ?string
     {
         return $this->fontSizeRelAsian;
     }
 
-    public function setFontSizeRelAsian($fontSizeRelAsian = null)
+    public function setFontSizeRelAsian(?string $fontSizeRelAsian = null)
     {
         $this->fontSizeRelAsian = $fontSizeRelAsian;
+    
+        return $this;
     }
 
     /**
-     * it returns fontSizeRelComplex
-     *
-     * @return string|null it returns fontSizeRelComplex
+     * @return string|null
      */
     public function getFontSizeRelComplex(): ?string
     {
         return $this->fontSizeRelComplex;
     }
 
-    public function setFontSizeRelComplex($fontSizeRelComplex = null)
+    public function setFontSizeRelComplex(?string $fontSizeRelComplex = null)
     {
         $this->fontSizeRelComplex = $fontSizeRelComplex;
+    
+        return $this;
     }
 
     /**
-     * it returns scriptType
-     *
-     * @return string|null it returns scriptType
+     * @return string|null
      */
     public function getScriptType(): ?string
     {
         return $this->scriptType;
     }
 
-    public function setScriptType($scriptType = null)
+    public function setScriptType(?string $scriptType = null)
     {
         $this->scriptType = $scriptType;
+    
+        return $this;
     }
 
     /**
-     * it returns letterSpacing
-     *
-     * @return string|null it returns letterSpacing
+     * @return string|null
      */
     public function getLetterSpacing(): ?string
     {
         return $this->letterSpacing;
     }
 
-    public function setLetterSpacing($letterSpacing = null)
+    public function setLetterSpacing(?string $letterSpacing = null)
     {
         $this->letterSpacing = $letterSpacing;
+    
+        return $this;
     }
 
     /**
-     * it returns language
-     *
-     * @return string|null it returns language
+     * @return string|null
      */
     public function getLanguage(): ?string
     {
         return $this->language;
     }
 
-    public function setLanguage($language = null)
+    public function setLanguage(?string $language = null)
     {
         $this->language = $language;
+    
+        return $this;
     }
 
     /**
-     * it returns languageAsian
-     *
-     * @return string|null it returns languageAsian
+     * @return string|null
      */
     public function getLanguageAsian(): ?string
     {
         return $this->languageAsian;
     }
 
-    public function setLanguageAsian($languageAsian = null)
+    public function setLanguageAsian(?string $languageAsian = null)
     {
         $this->languageAsian = $languageAsian;
+    
+        return $this;
     }
 
     /**
-     * it returns languageComplex
-     *
-     * @return string|null it returns languageComplex
+     * @return string|null
      */
     public function getLanguageComplex(): ?string
     {
         return $this->languageComplex;
     }
 
-    public function setLanguageComplex($languageComplex = null)
+    public function setLanguageComplex(?string $languageComplex = null)
     {
         $this->languageComplex = $languageComplex;
+    
+        return $this;
     }
 
     /**
-     * it returns country
-     *
-     * @return string|null it returns country
+     * @return string|null
      */
     public function getCountry(): ?string
     {
         return $this->country;
     }
 
-    public function setCountry($country = null)
+    public function setCountry(?string $country = null)
     {
         $this->country = $country;
+    
+        return $this;
     }
 
     /**
-     * it returns countryAsian
-     *
-     * @return string|null it returns countryAsian
+     * @return string|null
      */
     public function getCountryAsian(): ?string
     {
         return $this->countryAsian;
     }
 
-    public function setCountryAsian($countryAsian = null)
+    public function setCountryAsian(?string $countryAsian = null)
     {
         $this->countryAsian = $countryAsian;
+    
+        return $this;
     }
 
     /**
-     * it returns countryComplex
-     *
-     * @return string|null it returns countryComplex
+     * @return string|null
      */
     public function getCountryComplex(): ?string
     {
         return $this->countryComplex;
     }
 
-    public function setCountryComplex($countryComplex = null)
+    public function setCountryComplex(?string $countryComplex = null)
     {
         $this->countryComplex = $countryComplex;
+    
+        return $this;
     }
 
     /**
-     * it returns script
-     *
-     * @return string|null it returns script
+     * @return string|null
      */
     public function getScript(): ?string
     {
         return $this->script;
     }
 
-    public function setScript($script = null)
+    public function setScript(?string $script = null)
     {
         $this->script = $script;
+    
+        return $this;
     }
 
     /**
-     * it returns scriptAsian
-     *
-     * @return string|null it returns scriptAsian
+     * @return string|null
      */
     public function getScriptAsian(): ?string
     {
         return $this->scriptAsian;
     }
 
-    public function setScriptAsian($scriptAsian = null)
+    public function setScriptAsian(?string $scriptAsian = null)
     {
         $this->scriptAsian = $scriptAsian;
+    
+        return $this;
     }
 
     /**
-     * it returns scriptComplex
-     *
-     * @return string|null it returns scriptComplex
+     * @return string|null
      */
     public function getScriptComplex(): ?string
     {
         return $this->scriptComplex;
     }
 
-    public function setScriptComplex($scriptComplex = null)
+    public function setScriptComplex(?string $scriptComplex = null)
     {
         $this->scriptComplex = $scriptComplex;
+    
+        return $this;
     }
 
     /**
-     * it returns rfcLanguageTag
-     *
-     * @return string|null it returns rfcLanguageTag
+     * @return string|null
      */
     public function getRfcLanguageTag(): ?string
     {
         return $this->rfcLanguageTag;
     }
 
-    public function setRfcLanguageTag($rfcLanguageTag = null)
+    public function setRfcLanguageTag(?string $rfcLanguageTag = null)
     {
         $this->rfcLanguageTag = $rfcLanguageTag;
+    
+        return $this;
     }
 
     /**
-     * it returns rfcLanguageTagAsian
-     *
-     * @return string|null it returns rfcLanguageTagAsian
+     * @return string|null
      */
     public function getRfcLanguageTagAsian(): ?string
     {
         return $this->rfcLanguageTagAsian;
     }
 
-    public function setRfcLanguageTagAsian($rfcLanguageTagAsian = null)
+    public function setRfcLanguageTagAsian(?string $rfcLanguageTagAsian = null)
     {
         $this->rfcLanguageTagAsian = $rfcLanguageTagAsian;
+    
+        return $this;
     }
 
     /**
-     * it returns rfcLanguageTagComplex
-     *
-     * @return string|null it returns rfcLanguageTagComplex
+     * @return string|null
      */
     public function getRfcLanguageTagComplex(): ?string
     {
         return $this->rfcLanguageTagComplex;
     }
 
-    public function setRfcLanguageTagComplex($rfcLanguageTagComplex = null)
+    public function setRfcLanguageTagComplex(?string $rfcLanguageTagComplex = null)
     {
         $this->rfcLanguageTagComplex = $rfcLanguageTagComplex;
+    
+        return $this;
     }
 
     /**
-     * it returns fontStyle
-     *
-     * @return string|null it returns fontStyle
+     * @return string|null
      */
     public function getFontStyle(): ?string
     {
         return $this->fontStyle;
     }
 
-    public function setFontStyle($fontStyle = null)
+    public function setFontStyle(?string $fontStyle = null)
     {
         $this->fontStyle = $fontStyle;
+    
+        return $this;
     }
 
     /**
-     * it returns fontStyleAsian
-     *
-     * @return string|null it returns fontStyleAsian
+     * @return string|null
      */
     public function getFontStyleAsian(): ?string
     {
         return $this->fontStyleAsian;
     }
 
-    public function setFontStyleAsian($fontStyleAsian = null)
+    public function setFontStyleAsian(?string $fontStyleAsian = null)
     {
         $this->fontStyleAsian = $fontStyleAsian;
+    
+        return $this;
     }
 
     /**
-     * it returns fontStyleComplex
-     *
-     * @return string|null it returns fontStyleComplex
+     * @return string|null
      */
     public function getFontStyleComplex(): ?string
     {
         return $this->fontStyleComplex;
     }
 
-    public function setFontStyleComplex($fontStyleComplex = null)
+    public function setFontStyleComplex(?string $fontStyleComplex = null)
     {
         $this->fontStyleComplex = $fontStyleComplex;
+    
+        return $this;
     }
 
     /**
-     * it returns fontRelief
-     *
-     * @return string|null it returns fontRelief
+     * @return string|null
      */
     public function getFontRelief(): ?string
     {
         return $this->fontRelief;
     }
 
-    public function setFontRelief($fontRelief = null)
+    public function setFontRelief(?string $fontRelief = null)
     {
         $this->fontRelief = $fontRelief;
+    
+        return $this;
     }
 
     /**
-     * it returns textShadow
-     *
-     * @return string|null it returns textShadow
+     * @return string|null
      */
     public function getTextShadow(): ?string
     {
         return $this->textShadow;
     }
 
-    public function setTextShadow($textShadow = null)
+    public function setTextShadow(?string $textShadow = null)
     {
         $this->textShadow = $textShadow;
+    
+        return $this;
     }
 
     /**
-     * it returns textUnderlineType
-     *
-     * @return string|null it returns textUnderlineType
+     * @return string|null
      */
     public function getTextUnderlineType(): ?string
     {
         return $this->textUnderlineType;
     }
 
-    public function setTextUnderlineType($textUnderlineType = null)
+    public function setTextUnderlineType(?string $textUnderlineType = null)
     {
         $this->textUnderlineType = $textUnderlineType;
+    
+        return $this;
     }
 
     /**
-     * it returns textUnderlineStyle
-     *
-     * @return string|null it returns textUnderlineStyle
+     * @return string|null
      */
     public function getTextUnderlineStyle(): ?string
     {
         return $this->textUnderlineStyle;
     }
 
-    public function setTextUnderlineStyle($textUnderlineStyle = null)
+    public function setTextUnderlineStyle(?string $textUnderlineStyle = null)
     {
         $this->textUnderlineStyle = $textUnderlineStyle;
+    
+        return $this;
     }
 
     /**
-     * it returns textUnderlineWidth
-     *
-     * @return string|null it returns textUnderlineWidth
+     * @return string|null
      */
     public function getTextUnderlineWidth(): ?string
     {
         return $this->textUnderlineWidth;
     }
 
-    public function setTextUnderlineWidth($textUnderlineWidth = null)
+    public function setTextUnderlineWidth(?string $textUnderlineWidth = null)
     {
         $this->textUnderlineWidth = $textUnderlineWidth;
+    
+        return $this;
     }
 
     /**
-     * it returns textUnderlineColor
-     *
-     * @return string|null it returns textUnderlineColor
+     * @return string|null
      */
     public function getTextUnderlineColor(): ?string
     {
         return $this->textUnderlineColor;
     }
 
-    public function setTextUnderlineColor($textUnderlineColor = null)
+    public function setTextUnderlineColor(?string $textUnderlineColor = null)
     {
         $this->textUnderlineColor = $textUnderlineColor;
+    
+        return $this;
     }
 
     /**
-     * it returns textOverlineType
-     *
-     * @return string|null it returns textOverlineType
+     * @return string|null
      */
     public function getTextOverlineType(): ?string
     {
         return $this->textOverlineType;
     }
 
-    public function setTextOverlineType($textOverlineType = null)
+    public function setTextOverlineType(?string $textOverlineType = null)
     {
         $this->textOverlineType = $textOverlineType;
+    
+        return $this;
     }
 
     /**
-     * it returns textOverlineStyle
-     *
-     * @return string|null it returns textOverlineStyle
+     * @return string|null
      */
     public function getTextOverlineStyle(): ?string
     {
         return $this->textOverlineStyle;
     }
 
-    public function setTextOverlineStyle($textOverlineStyle = null)
+    public function setTextOverlineStyle(?string $textOverlineStyle = null)
     {
         $this->textOverlineStyle = $textOverlineStyle;
+    
+        return $this;
     }
 
     /**
-     * it returns textOverlineWidth
-     *
-     * @return string|null it returns textOverlineWidth
+     * @return string|null
      */
     public function getTextOverlineWidth(): ?string
     {
         return $this->textOverlineWidth;
     }
 
-    public function setTextOverlineWidth($textOverlineWidth = null)
+    public function setTextOverlineWidth(?string $textOverlineWidth = null)
     {
         $this->textOverlineWidth = $textOverlineWidth;
+    
+        return $this;
     }
 
     /**
-     * it returns textOverlineColor
-     *
-     * @return string|null it returns textOverlineColor
+     * @return string|null
      */
     public function getTextOverlineColor(): ?string
     {
         return $this->textOverlineColor;
     }
 
-    public function setTextOverlineColor($textOverlineColor = null)
+    public function setTextOverlineColor(?string $textOverlineColor = null)
     {
         $this->textOverlineColor = $textOverlineColor;
+    
+        return $this;
     }
 
     /**
-     * it returns textOverlineMode
-     *
-     * @return string|null it returns textOverlineMode
+     * @return string|null
      */
     public function getTextOverlineMode(): ?string
     {
         return $this->textOverlineMode;
     }
 
-    public function setTextOverlineMode($textOverlineMode = null)
+    public function setTextOverlineMode(?string $textOverlineMode = null)
     {
         $this->textOverlineMode = $textOverlineMode;
+    
+        return $this;
     }
 
     /**
-     * it returns fontWeight
-     *
-     * @return string|null it returns fontWeight
+     * @return string|null
      */
     public function getFontWeight(): ?string
     {
         return $this->fontWeight;
     }
 
-    public function setFontWeight($fontWeight = null)
+    public function setFontWeight(?string $fontWeight = null)
     {
         $this->fontWeight = $fontWeight;
+    
+        return $this;
     }
 
     /**
-     * it returns fontWeightAsian
-     *
-     * @return string|null it returns fontWeightAsian
+     * @return string|null
      */
     public function getFontWeightAsian(): ?string
     {
         return $this->fontWeightAsian;
     }
 
-    public function setFontWeightAsian($fontWeightAsian = null)
+    public function setFontWeightAsian(?string $fontWeightAsian = null)
     {
         $this->fontWeightAsian = $fontWeightAsian;
+    
+        return $this;
     }
 
     /**
-     * it returns fontWeightComplex
-     *
-     * @return string|null it returns fontWeightComplex
+     * @return string|null
      */
     public function getFontWeightComplex(): ?string
     {
         return $this->fontWeightComplex;
     }
 
-    public function setFontWeightComplex($fontWeightComplex = null)
+    public function setFontWeightComplex(?string $fontWeightComplex = null)
     {
         $this->fontWeightComplex = $fontWeightComplex;
+    
+        return $this;
     }
 
     /**
-     * it returns textUnderlineMode
-     *
-     * @return string|null it returns textUnderlineMode
+     * @return string|null
      */
     public function getTextUnderlineMode(): ?string
     {
         return $this->textUnderlineMode;
     }
 
-    public function setTextUnderlineMode($textUnderlineMode = null)
+    public function setTextUnderlineMode(?string $textUnderlineMode = null)
     {
         $this->textUnderlineMode = $textUnderlineMode;
+    
+        return $this;
     }
 
     /**
-     * it returns textLineThroughMode
-     *
-     * @return string|null it returns textLineThroughMode
+     * @return string|null
      */
     public function getTextLineThroughMode(): ?string
     {
         return $this->textLineThroughMode;
     }
 
-    public function setTextLineThroughMode($textLineThroughMode = null)
+    public function setTextLineThroughMode(?string $textLineThroughMode = null)
     {
         $this->textLineThroughMode = $textLineThroughMode;
+    
+        return $this;
     }
 
     /**
-     * it returns letterKerning
-     *
-     * @return string|null it returns letterKerning
+     * @return bool|null
      */
-    public function getLetterKerning(): ?string
+    public function getLetterKerning(): ?bool
     {
         return $this->letterKerning;
     }
 
-    public function setLetterKerning($letterKerning = null)
+    public function setLetterKerning(?bool $letterKerning = null)
     {
         $this->letterKerning = $letterKerning;
+    
+        return $this;
     }
 
     /**
-     * it returns textBlinking
-     *
-     * @return string|null it returns textBlinking
+     * @return bool|null
      */
-    public function getTextBlinking(): ?string
+    public function getTextBlinking(): ?bool
     {
         return $this->textBlinking;
     }
 
-    public function setTextBlinking($textBlinking = null)
+    public function setTextBlinking(?bool $textBlinking = null)
     {
         $this->textBlinking = $textBlinking;
+    
+        return $this;
     }
 
     /**
-     * it returns textCombine
-     *
-     * @return string|null it returns textCombine
+     * @return string|null
      */
     public function getTextCombine(): ?string
     {
         return $this->textCombine;
     }
 
-    public function setTextCombine($textCombine = null)
+    public function setTextCombine(?string $textCombine = null)
     {
         $this->textCombine = $textCombine;
+    
+        return $this;
     }
 
     /**
-     * it returns textCombineStartChar
-     *
-     * @return string|null it returns textCombineStartChar
+     * @return string|null
      */
     public function getTextCombineStartChar(): ?string
     {
         return $this->textCombineStartChar;
     }
 
-    public function setTextCombineStartChar($textCombineStartChar = null)
+    public function setTextCombineStartChar(?string $textCombineStartChar = null)
     {
         $this->textCombineStartChar = $textCombineStartChar;
+    
+        return $this;
     }
 
     /**
-     * it returns textCombineEndChar
-     *
-     * @return string|null it returns textCombineEndChar
+     * @return string|null
      */
     public function getTextCombineEndChar(): ?string
     {
         return $this->textCombineEndChar;
     }
 
-    public function setTextCombineEndChar($textCombineEndChar = null)
+    public function setTextCombineEndChar(?string $textCombineEndChar = null)
     {
         $this->textCombineEndChar = $textCombineEndChar;
+    
+        return $this;
     }
 
     /**
-     * it returns textEmphasize
-     *
-     * @return string|null it returns textEmphasize
+     * @return string|null
      */
     public function getTextEmphasize(): ?string
     {
         return $this->textEmphasize;
     }
 
-    public function setTextEmphasize($textEmphasize = null)
+    public function setTextEmphasize(?string $textEmphasize = null)
     {
         $this->textEmphasize = $textEmphasize;
+    
+        return $this;
     }
 
     /**
-     * it returns textScale
-     *
-     * @return string|null it returns textScale
+     * @return string|null
      */
     public function getTextScale(): ?string
     {
         return $this->textScale;
     }
 
-    public function setTextScale($textScale = null)
+    public function setTextScale(?string $textScale = null)
     {
         $this->textScale = $textScale;
+    
+        return $this;
     }
 
     /**
-     * it returns textRotationAngle
-     *
-     * @return string|null it returns textRotationAngle
+     * @return string|null
      */
     public function getTextRotationAngle(): ?string
     {
         return $this->textRotationAngle;
     }
 
-    public function setTextRotationAngle($textRotationAngle = null)
+    public function setTextRotationAngle(?string $textRotationAngle = null)
     {
         $this->textRotationAngle = $textRotationAngle;
+    
+        return $this;
     }
 
     /**
-     * it returns textRotationScale
-     *
-     * @return string|null it returns textRotationScale
+     * @return string|null
      */
     public function getTextRotationScale(): ?string
     {
         return $this->textRotationScale;
     }
 
-    public function setTextRotationScale($textRotationScale = null)
+    public function setTextRotationScale(?string $textRotationScale = null)
     {
         $this->textRotationScale = $textRotationScale;
+    
+        return $this;
     }
 
     /**
-     * it returns hyphenate
-     *
-     * @return string|null it returns hyphenate
+     * @return bool|null
      */
-    public function getHyphenate(): ?string
+    public function getHyphenate(): ?bool
     {
         return $this->hyphenate;
     }
 
-    public function setHyphenate($hyphenate = null)
+    public function setHyphenate(?bool $hyphenate = null)
     {
         $this->hyphenate = $hyphenate;
+    
+        return $this;
     }
 
     /**
-     * it returns hyphenationRemainCharCount
-     *
-     * @return string|null it returns hyphenationRemainCharCount
+     * @return string|null
      */
     public function getHyphenationRemainCharCount(): ?string
     {
         return $this->hyphenationRemainCharCount;
     }
 
-    public function setHyphenationRemainCharCount($hyphenationRemainCharCount = null)
+    public function setHyphenationRemainCharCount(?string $hyphenationRemainCharCount = null)
     {
         $this->hyphenationRemainCharCount = $hyphenationRemainCharCount;
+    
+        return $this;
     }
 
     /**
-     * it returns hyphenationPushCharCount
-     *
-     * @return string|null it returns hyphenationPushCharCount
+     * @return string|null
      */
     public function getHyphenationPushCharCount(): ?string
     {
         return $this->hyphenationPushCharCount;
     }
 
-    public function setHyphenationPushCharCount($hyphenationPushCharCount = null)
+    public function setHyphenationPushCharCount(?string $hyphenationPushCharCount = null)
     {
         $this->hyphenationPushCharCount = $hyphenationPushCharCount;
+    
+        return $this;
     }
 
     /**
-     * it returns display
-     *
-     * @return string|null it returns display
+     * @return string
      */
-    public function getDisplay(): ?string
+    public function getDisplay(): string
     {
         return $this->display;
     }
 
-    public function setDisplay($display)
+    public function setDisplay(string $display)
     {
         $this->display = $display;
+    
+        return $this;
     }
 
     /**
-     * it returns condition
-     *
-     * @return string|null it returns condition
+     * @return string
      */
-    public function getCondition(): ?string
+    public function getCondition(): string
     {
         return $this->condition;
     }
 
-    public function setCondition($condition)
+    public function setCondition(string $condition)
     {
         $this->condition = $condition;
+    
+        return $this;
     }
 
 }

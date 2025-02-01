@@ -5,12 +5,10 @@ namespace OpenDocument\Style\Interfaces;
 interface BackgroundColorInterface
 {
     /**
-     * it returns backgroundColor
-     *
-     * @return string|null it returns backgroundColor
+     * @return string|null returns backgroundColor
      */
     public function getBackgroundColor(): ?string;
 
-    public function setBackgroundColor($backgroundColor = null);
+    public function setBackgroundColor(?string $backgroundColor = null);
 
 }

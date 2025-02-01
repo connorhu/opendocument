@@ -4,21 +4,21 @@ namespace OpenDocument\Style\Traits;
 
 trait BackgroundColorTrait
 {
-    protected $backgroundColor = null;
+    protected ?string $backgroundColor = null;
 
     /**
-     * it returns backgroundColor
-     *
-     * @return string|null it returns backgroundColor
+     * @return string|null
      */
     public function getBackgroundColor(): ?string
     {
         return $this->backgroundColor;
     }
 
-    public function setBackgroundColor($backgroundColor = null)
+    public function setBackgroundColor(?string $backgroundColor = null)
     {
         $this->backgroundColor = $backgroundColor;
+    
+        return $this;
     }
 
 }
