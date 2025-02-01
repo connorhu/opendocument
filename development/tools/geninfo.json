@@ -12,6 +12,78 @@
     "class": "Border"
   },
   {
+    "rng_define_name": "common-border-line-width-attlist",
+    "type": "trait",
+    "section": "style",
+    "class": "BorderLineWidth"
+  },
+  {
+    "rng_define_name": "common-vertical-margin-attlist",
+    "type": "trait",
+    "section": "style",
+    "class": "VerticalMargin"
+  },
+  {
+    "rng_define_name": "common-margin-attlist",
+    "type": "trait",
+    "section": "style",
+    "class": "Margin"
+  },
+  {
+    "rng_define_name": "common-text-align",
+    "type": "trait",
+    "section": "style",
+    "class": "TextAlign"
+  },
+  {
+    "rng_define_name": "common-break-attlist",
+    "type": "trait",
+    "section": "style",
+    "class": "Break"
+  },
+  {
+    "rng_define_name": "common-padding-attlist",
+    "type": "trait",
+    "section": "style",
+    "class": "Padding"
+  },
+  {
+    "rng_define_name": "common-shadow-attlist",
+    "type": "trait",
+    "section": "style",
+    "class": "Shadow"
+  },
+  {
+    "rng_define_name": "common-keep-with-next-attlist",
+    "type": "trait",
+    "section": "style",
+    "class": "KeepWithNext"
+  },
+  {
+    "rng_define_name": "common-horizontal-margin-attlist",
+    "type": "trait",
+    "section": "style",
+    "class": "HorizontalMargin"
+  },
+  {
+    "rng_define_name": "common-writing-mode-attlist",
+    "type": "trait",
+    "section": "style",
+    "class": "WritingMode"
+  },
+  {
+    "rng_define_name": "common-page-number-attlist",
+    "type": "trait",
+    "section": "style",
+    "class": "PageNumber"
+  },
+  {
+    "rng_define_name": "common-background-transparency-attlist",
+    "type": "trait",
+    "section": "style",
+    "class": "BackgroundTransparency"
+  },
+  {
     "rng_define_name": "style-text-properties-attlist",
     "type": "trait",
     "section": "style",

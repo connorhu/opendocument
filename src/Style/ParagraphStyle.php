@@ -2,15 +2,16 @@
 
 namespace OpenDocument\Style;
 
-// https://docs.oasis-open.org/office/OpenDocument/v1.3/cs02/schemas/
-// <style:background-image> 17.3, <style:drop-cap> 17.9 and <style:tab-stops> 17.7.
 /**
+ * @see https://docs.oasis-open.org/office/OpenDocument/v1.3/os/part3-schema/OpenDocument-v1.3-os-part3-schema.html#element-style_paragraph-properties
+ *
  * fo:background-color 20.182,
  * fo:border 20.183.2,
  * fo:border-bottom 20.183.3
  * fo:border-left 20.183.4
  * fo:border-right 20.183.5
  * fo:border-top 20.183.6
+ *
  * fo:break-after 20.184
  * fo:break-before 20.185
  * fo:hyphenation-keep 20.196
@@ -59,10 +60,36 @@ namespace OpenDocument\Style;
  * style:writing-mode-automatic 20.405
  * text:line-number 20.430 and text:number-lines 20.434.
  */
-class ParagraphStyle extends Style
+class ParagraphStyle extends Style implements
+    Interfaces\BackgroundColorInterface,
+    Interfaces\BackgroundTransparencyInterface,
+    Interfaces\BorderLineWidthInterface,
+    Interfaces\BorderInterface,
+    Interfaces\BreakInterface,
+    Interfaces\HorizontalMarginInterface,
+    Interfaces\KeepWithNextInterface,
+    Interfaces\MarginInterface,
+    Interfaces\PaddingInterface,
+    Interfaces\PageNumberInterface,
+    Interfaces\ShadowInterface,
+    Interfaces\TextAlignInterface,
+    Interfaces\VerticalMarginInterface,
+    Interfaces\WritingModeInterface
 {
     use Traits\BackgroundColorTrait;
+    use Traits\BackgroundTransparencyTrait;
+    use Traits\BorderLineWidthTrait;
     use Traits\BorderTrait;
+    use Traits\BreakTrait;
+    use Traits\HorizontalMarginTrait;
+    use Traits\KeepWithNextTrait;
+    use Traits\MarginTrait;
+    use Traits\PaddingTrait;
+    use Traits\PageNumberTrait;
+    use Traits\ShadowTrait;
+    use Traits\TextAlignTrait;
+    use Traits\VerticalMarginTrait;
+    use Traits\WritingModeTrait;
 
     // fo:border
     // <style:graphic-properties> 17.21, <style:header-footer-properties> 17.5, <style:page-layout-properties> 17.2, <style:paragraph-properties> 17.6 and <style:table-cell-properties> 17.18.
