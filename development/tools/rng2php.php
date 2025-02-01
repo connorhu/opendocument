@@ -42,12 +42,10 @@ class PHPCodeGenerator
         $getterName = 'get'.ucfirst($propertyName);
 
         $buffer = self::indent('/**
- * it returns '. $propertyName .'
- *
- * @return '.$returnType. ($optional ? '|null' : '') .' it returns '. $propertyName .'
+ * @return '.$returnType. ($optional ? '|null' : '').'
  */'. PHP_EOL);
         $buffer .= self::INDENT.'public function '.$getterName.'()';
-        $buffer .= ': '.($optional ? '?': '').$returnType;
+        $buffer .= ': '.self::getPhpType($returnType, $optional);
 
         $buffer .= PHP_EOL;
 
@@ -63,9 +61,7 @@ class PHPCodeGenerator
         $getterName = 'get'.ucfirst($propertyName);
 
         $buffer = self::indent('/**
- * it returns '. $propertyName .'
- *
- * @return '.$returnType. ($optional ? '|null' : '') .' it returns '. $propertyName .'
+ * @return '.$returnType. ($optional ? '|null' : '') .' returns '. $propertyName .'
  */'. PHP_EOL);
         $buffer .= self::INDENT.'public function '.$getterName.'()';
         $buffer .= ': '.($optional ? '?': '').$returnType;
@@ -75,27 +71,36 @@ class PHPCodeGenerator
         return $buffer;
     }
 
-    public function generateSetter(string $propertyName, string $type, string $defaultValue = null, bool $optional = true): string
-    {
+    public function generateSetter(
+        string $propertyName,
+        string $type,
+        ?string $defaultValue = null,
+        bool $optional = true,
+    ): string {
         $setterName = 'set'.ucfirst($propertyName);
 
-        $buffer = 'public function '.$setterName.'($'. $propertyName;
+        $buffer = 'public function '.$setterName.'('.self::getPhpType($type, $optional).' $'. $propertyName;
         if ($defaultValue === 'null') {
             $buffer .= ' = null';
         }
         $buffer .= ')'.PHP_EOL;
         $buffer .= '{'. PHP_EOL;
-        $buffer .= self::INDENT .'$this->'.$propertyName.' = $'.$propertyName.';'. PHP_EOL;
+        $buffer .= self::INDENT .'$this->'.$propertyName.' = $'.$propertyName.';'. PHP_EOL. PHP_EOL;
+        $buffer .= self::INDENT .'return $this;'. PHP_EOL;
         $buffer .= '}'. PHP_EOL;
 
         return self::indent($buffer);
     }
 
-    public function generateSetterInterface(string $proprtyName, string $type, string $defaultValue = null, bool $optional = true): string
-    {
-        $setterName = 'set'.ucfirst($proprtyName);
+    public function generateSetterInterface(
+        string $propertyName,
+        string $type,
+        ?string $defaultValue = null,
+        bool $optional = true,
+    ): string {
+        $setterName = 'set'.ucfirst($propertyName);
 
-        $buffer = 'public function '.$setterName.'($'. $proprtyName;
+        $buffer = 'public function '.$setterName.'('.($optional ? '?' : '').$type.' $'. $propertyName;
         if ($defaultValue === 'null') {
             $buffer .= ' = null';
         }
@@ -104,17 +109,21 @@ class PHPCodeGenerator
         return self::indent($buffer);
     }
 
-    public function generateGetterAndSetter(string $proprtyName, string $type, string $defaultValue = null, bool $optional = true): string
-    {
-        $buffer = $this->generateGetter($proprtyName, $type, $optional);
+    public function generateGetterAndSetter(
+        string $propertyName,
+        string $type,
+        ?string $defaultValue = null,
+        bool $optional = true,
+    ): string {
+        $buffer = $this->generateGetter($propertyName, $type, $optional);
         $buffer .= PHP_EOL;
-        $buffer .= $this->generateSetter($proprtyName, $type, $defaultValue, $optional);
+        $buffer .= $this->generateSetter($propertyName, $type, $defaultValue, $optional);
         $buffer .= PHP_EOL;
 
         return $buffer;
     }
 
-    public function generateGetterAndSetterInterfaces(string $proprtyName, string $type, string $defaultValue = null, bool $optional = true): string
+    public function generateGetterAndSetterInterfaces(string $proprtyName, string $type, ?string $defaultValue = null, bool $optional = true): string
     {
         $buffer = $this->generateGetterInterface($proprtyName, $type, $optional);
         $buffer .= PHP_EOL;
@@ -124,6 +133,21 @@ class PHPCodeGenerator
         return $buffer;
     }
 
+    public static function getPhpType(string $type, bool $optional): string
+    {
+        return ($optional && !str_contains($type, '|') ? '?' : '').$type;
+    }
+
+    /**
+     * @param string $namespace
+     * @param string $className
+     * @param array<string, array{
+     *     name: string,
+     *     type: string,
+     *     optional: boolean
+     * }> $attributes
+     * @return string
+     */
     public function generateTrait(string $namespace, string $className, array $attributes): string
     {
         $buffer = '<?php'.PHP_EOL.PHP_EOL;
@@ -132,7 +156,7 @@ class PHPCodeGenerator
         $buffer .= '{'.PHP_EOL;
 
         foreach ($attributes as $attribute) {
-            $buffer .= self::INDENT.'protected $'.$attribute['name'];
+            $buffer .= self::INDENT.'protected '.self::getPhpType($attribute['type'], $attribute['optional']).' $'.$attribute['name'];
 
             if ($attribute['optional']) {
                 $buffer .= ' = null';
@@ -148,7 +172,7 @@ class PHPCodeGenerator
                 $defaultValue = 'null';
             }
 
-            $buffer .= $this->generateGetterAndSetter($attribute['name'], 'string', $defaultValue, true);
+            $buffer .= $this->generateGetterAndSetter($attribute['name'], $attribute['type'], $defaultValue, $attribute['optional']);
         }
 
         $buffer .= '}'.PHP_EOL;
@@ -193,6 +217,18 @@ class PHPCodeGenerator
             return strtoupper($m[1]);
         }, $propertyName);
     }
+
+    public function mapPhpType(string $propertyName, string $type): string
+    {
+        return match ($propertyName) {
+            'border', 'borderTop', 'borderBottom', 'borderLeft', 'borderRight' => $type,
+            'backgroundColor' => 'string',
+            default => match ($type) {
+                'boolean' => 'bool',
+                default => 'string',
+            },
+        };
+    }
 }
 
 $gen = new PHPCodeGenerator();
@@ -221,12 +257,11 @@ for ($i = 0; $i < $length; $i++) {
         $filename .= 'Trait';
         $classname .= 'Trait';
 
-        $interaceInfo = $info;
-        $interaceInfo['type'] = 'interface';
-        $geninfo[] = $interaceInfo;
+        $interfaceInfo = $info;
+        $interfaceInfo['type'] = 'interface';
+        $geninfo[] = $interfaceInfo;
         $length++;
-    }
-    elseif ($info['type'] === 'interface') {
+    } elseif ($info['type'] === 'interface') {
         $dir .= '/Interfaces';
         $namespace .= '\\Interfaces';
         $filename .= 'Interface';
@@ -237,9 +272,11 @@ for ($i = 0; $i < $length; $i++) {
 
     $attributes = [];
 
+    /** @var \Dom\Element $attributeNode */
     foreach ($xpath->query('.//rng:attribute', $node) as $attributeNode) {
         $optional = $attributeNode->parentNode->nodeName === 'rng:optional';
         $name = $gen->phpPropertyName($attributeNode->getAttribute('name'));
+        $type = $gen->mapPhpType($name, $attributeNode->childNodes[1]->getAttribute('name')); // rng:ref name="..."
 
         if (isset($attributes[$name])) {
             continue;
@@ -247,6 +284,7 @@ for ($i = 0; $i < $length; $i++) {
 
         $attributes[$name] = [
             'name' => $name,
+            'type' => $type,
             'optional' => $optional,
         ];
     }
