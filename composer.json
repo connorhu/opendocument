@@ -3,7 +3,8 @@
     "description": "PHP Library to read / write ODF 1.3",
     "require": {
         "php": ">=8.3",
-        "ext-xmlwriter": "*"
+        "ext-xmlwriter": "*",
+        "ext-zip": "*"
     },
     "require-dev": {
         "ext-dom": "*",
@@ -13,6 +14,11 @@
     "autoload": {
         "psr-4": {
             "OpenDocument\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OpenDocument\\Tests\\": "tests/"
         }
     }
 }

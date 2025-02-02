@@ -2,6 +2,14 @@
 
 namespace OpenDocument\Writer\DocumentParts;
 
+use OpenDocument\Documents\ChartDocument;
+use OpenDocument\Documents\DatabaseDocument;
+use OpenDocument\Documents\DrawingDocument;
+use OpenDocument\Documents\ImageDocument;
+use OpenDocument\Documents\PresentationDocument;
+use OpenDocument\Documents\SpreadsheetDocument;
+use OpenDocument\Documents\TextDocument;
+
 class Content extends AbstractDocumentPart
 {
     private const array ROOT_ATTRIBUTES = [
@@ -45,6 +53,7 @@ class Content extends AbstractDocumentPart
 
     public function write(): string
     {
+        $document = $this->getWriter()->getDocument();
         $xmlWriter = $this->initXmlWriter();
 
         $xmlWriter->startElement('office:document-content');
@@ -63,11 +72,28 @@ class Content extends AbstractDocumentPart
         $xmlWriter->endElement();
 
         $xmlWriter->startElement('office:body');
-        $xmlWriter->startElement('office:text');
-        $xmlWriter->endElement();
-        $xmlWriter->endElement();
 
-        $xmlWriter->endElement();
+        // text csak akkor ha  doc text doc
+        $rootDocument = $document->getRootDocument();
+        if ($rootDocument instanceof TextDocument) {
+            $xmlWriter->startElement('office:text');
+        } elseif ($rootDocument instanceof ChartDocument) {
+            $xmlWriter->startElement('office:chart');
+        } elseif ($rootDocument instanceof DatabaseDocument) {
+            $xmlWriter->startElement('office:database');
+        } elseif ($rootDocument instanceof DrawingDocument) {
+            $xmlWriter->startElement('office:drawing');
+        } elseif ($rootDocument instanceof ImageDocument) {
+            $xmlWriter->startElement('office:image');
+        } elseif ($rootDocument instanceof PresentationDocument) {
+            $xmlWriter->startElement('office:presentation');
+        } elseif ($rootDocument instanceof SpreadsheetDocument) {
+            $xmlWriter->startElement('office:spreadsheet');
+        }
+
+        $xmlWriter->endElement(); // office:text, chart, ...
+        $xmlWriter->endElement(); // office:body
+        $xmlWriter->endElement(); // office:document-content
 
         return $xmlWriter->outputMemory();
     }
